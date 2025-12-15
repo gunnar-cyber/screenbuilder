@@ -1,0 +1,23 @@
+{
+  "name": "@screenbuilder/error-handling",
+  "version": "1.0.0",
+  "description": "Comprehensive error handling utilities for Screen Builder",
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./error-utils": "./error-utils.ts",
+    "./vue-error-handlers": "./vue-error-handlers.ts"
+  },
+  "keywords": [
+    "error-handling",
+    "vue",
+    "typescript",
+    "utilities"
+  ],
+  "peerDependencies": {
+    "vue": "^3.4.23",
+    "pinia": "^2.0.0"
+  }
+}
