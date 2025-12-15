@@ -1,0 +1,21 @@
+<div class="modesSideMainDiv">
+  <div class="modesSideTopDialDiv">
+    <div class="modesDial" v-for="(dial, index) in dials" :key="dial.type">
+      <Dial :dialType="dial.type" :screenType="modeDialScreenType" :currentMode="whatModeAreWeIn"></Dial>
+    </div>
+  </div>
+  <button
+    class="modeSideButton bottomRowHeight"
+    @click="showNavigation(control, isControlBtnPressed)"
+    :disabled="isAnyDialOn"
+  >
+    Controls
+  </button>
+  <button
+    class="modeSideButton last bottomRowHeight"
+    @click="showNavigation(alarm, isAlarmBtnPressed)"
+    :disabled="isAnyDialOn"
+  >
+    Alarms
+  </button>
+</div>

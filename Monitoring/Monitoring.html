@@ -1,0 +1,174 @@
+<div class="h-full w-full">
+  <div class="monitoringTitleText leftColumnWidth bottomRowHeightAndMargin monitoringMenuButton" @click="close">
+    Monitoring
+  </div>
+  <div
+    class="monitoringMain windowBottomOffset windowRightOffset bottomWindowSize bg-blueGray-50 font-light text-gray-700 flex flex-col"
+  >
+    <div class="monitoringTabFirstDiv bg-blueGray-200">
+      <div class="monitoringCloseButtonDiv" @click="close">X</div>
+      <div class="monitoringTabs leftColumnWidthAsMargin">
+        <a @click="changeTab(1)" :class="[ activetab === 1 ? 'active' : '' ]"> General </a>
+        <div class="monitoringTabsFiller"></div>
+        <!-- spo2 and co2 not in default T1 setup
+          <a
+            @click="changeTab(2)"
+            :class="[ activetab === 2 ? 'active' : '' ]">
+            C02
+          </a>
+          <a
+            @click="changeTab(3)"
+            :class="[ activetab === 3 ? 'active' : '' ]">
+            Sp02
+          </a>-->
+      </div>
+    </div>
+    <div class="mainArea p-3 h-full">
+      <div v-if="activetab === 1" class="relative h-full flex flex-row">
+        <div class="h-full monitoringSubTabs">
+          <a
+            @click="activesubtab = 1"
+            class="monitoringSubTab flex justify-center items-center border border-gray-300 h-1/6"
+            :class="{ 'active': activesubtab == 1 }"
+          >
+            1
+          </a>
+          <a
+            @click="activesubtab = 2"
+            class="monitoringSubTab flex justify-center items-center border border-gray-300 h-1/6"
+            :class="{ 'active': activesubtab == 2 }"
+            style="border-top: none"
+          >
+            2
+          </a>
+          <a
+            @click="activesubtab = 3"
+            class="monitoringSubTab flex justify-center items-center border border-gray-300 h-1/6"
+            :class="{ 'active': activesubtab == 3 }"
+            style="border-top: none"
+          >
+            3
+          </a>
+        </div>
+        <div v-if="activesubtab == 1" class="border border-gray-300 h-full flex-1 bg-white flex flex-row">
+          <!-- column1 -->
+          <div class="monitoringColumn flex flex-col flex-1 items-center">
+            <MonitoringParameter
+              :value="ppeak"
+              :color="currentPressureColor"
+              title="Ppeak"
+              unit="cmH20"
+            ></MonitoringParameter>
+            <MonitoringParameter :value="pmean" title="Pmean" unit="cmH20"></MonitoringParameter>
+
+            <MonitoringParameter v-if="inHiFlowMode" :value="peep" title="Pprox" unit="cmH20"></MonitoringParameter>
+            <MonitoringParameter
+              v-if="!inHiFlowMode"
+              :value="peep"
+              title="PEEP/CPAP"
+              unit="cmH20"
+            ></MonitoringParameter>
+            <MonitoringParameter :value="oxygen" title="Oxygen" unit="%"></MonitoringParameter>
+          </div>
+
+          <!-- column2 -->
+          <div class="monitoringColumn flex flex-col flex-1 items-center">
+            <MonitoringParameter :value="vte" :color="currentVteColor" title="VTE" unit="ml"></MonitoringParameter>
+            <MonitoringParameter
+              :value="ftotal"
+              :color="currentFTotalColor"
+              title="fTotal"
+              unit="b/min"
+            ></MonitoringParameter>
+            <MonitoringParameter
+              :value="expMinVol"
+              :color="currentExpMinVolColor"
+              title="ExpMinVol"
+              unit="l/min"
+            ></MonitoringParameter>
+            <MonitoringParameter :value="ieData" title="I:E" unit=""></MonitoringParameter>
+          </div>
+        </div>
+
+        <div v-if="activesubtab == 2" class="border border-gray-300 h-full flex-1 bg-white flex flex-row">
+          <!-- column1 -->
+          <div class="monitoringColumn flex flex-col flex-1 items-center">
+            <MonitoringParameter :value="ti" title="TI" unit="s"></MonitoringParameter>
+            <MonitoringParameter :value="te" title="TE" unit="s"></MonitoringParameter>
+            <MonitoringParameter :value="mvspont" title="MVSpont" unit="l/min"></MonitoringParameter>
+            <MonitoringParameter :value="fspont" title="fSpont" unit="b/min"></MonitoringParameter>
+          </div>
+
+          <!-- column2 -->
+          <div class="monitoringColumn flex flex-col flex-1 items-center">
+            <MonitoringParameter :value="inspFlow" title="Insp Flow" unit="l/min"></MonitoringParameter>
+            <MonitoringParameter :value="expFlow" title="Exp Flow" unit="l/min"></MonitoringParameter>
+            <MonitoringParameter :value="vti" title="VTI" unit="ml"></MonitoringParameter>
+            <MonitoringParameter :value="vleak" title="VLeak" unit="%"></MonitoringParameter>
+            <MonitoringParameter :value="mvleak" title="MVLeak" unit="l/min"></MonitoringParameter>
+          </div>
+        </div>
+
+        <div v-if="activesubtab == 3" class="border border-gray-300 h-full flex-1 bg-white flex flex-row">
+          <!-- column1 -->
+          <div class="monitoringColumn flex flex-col flex-1 items-center">
+            <MonitoringParameter :value="rinsp" title="Rinsp" unit="cmH2O/l/s"></MonitoringParameter>
+            <MonitoringParameter :value="autoPEEP" title="AutoPEEP" unit="cmH2O"></MonitoringParameter>
+            <MonitoringParameter value="---" title="P0.1" unit="cmH2O"></MonitoringParameter>
+            <MonitoringParameter :value="ptp" title="PTP" unit="cmH2O*s"></MonitoringParameter>
+            <MonitoringParameter value="---" title="T humidifier" unit="C"></MonitoringParameter>
+          </div>
+          <!-- column2 -->
+          <div class="monitoringColumn flex flex-col flex-1 items-center">
+            <MonitoringParameter :value="cstat" title="Cstat" unit="ml/cmH2O"></MonitoringParameter>
+            <MonitoringParameter :value="rcexp" title="RCexp" unit="s"></MonitoringParameter>
+            <MonitoringParameter :value="pplateau" title="Pplateau" unit="cmH2O"></MonitoringParameter>
+            <MonitoringParameter :value="changeP" title="&#x25B3;P" unit="cmH2O"></MonitoringParameter>
+            <MonitoringParameter :value="vteSpont" title="VTESpont" unit="ml"></MonitoringParameter>
+          </div>
+        </div>
+      </div>
+      <div v-if="activetab === 2" class="monitoringTabContent border border-gray-300 h-full flex flex-row">
+        <!-- CO2 Tab -->
+        <!-- column1 -->
+        <div class="monitoringColumn flex flex-col flex-1 items-center">
+          <MonitoringParameter :value="vdaw" title="VDaw" unit="ml"></MonitoringParameter>
+          <MonitoringParameter :value="slopeCO2" title="slopeCO2" unit="%CO2/l"></MonitoringParameter>
+          <MonitoringParameter :value="vtalv" title="Vtalv" unit="ml"></MonitoringParameter>
+          <MonitoringParameter :value="valv" title="V'alv" unit="l/min"></MonitoringParameter>
+          <MonitoringParameter :value="vdawvteRatio" title="VDaw/VTE" unit="%"></MonitoringParameter>
+        </div>
+
+        <!-- column 2 -->
+        <div class="monitoringColumn flex flex-col flex-1 items-center">
+          <MonitoringParameter :value="PetCO2" title="PetCO2" unit="mmHg"></MonitoringParameter>
+          <MonitoringParameter :value="FetCO2" title="FetCO2" unit="%"></MonitoringParameter>
+          <MonitoringParameter :value="VeCO2" title="VeCO2" unit="ml"></MonitoringParameter>
+          <MonitoringParameter :value="ViCO2" title="ViCO2" unit="ml"></MonitoringParameter>
+          <MonitoringParameter :value="VCO2" title="V'CO2" unit="ml/min"></MonitoringParameter>
+        </div>
+      </div>
+      <div v-if="activetab === 3" class="relative h-full flex flex-row">
+        <!-- SpO2 Tab -->
+
+        <div class="h-full monitoringSubTabs">
+          <a
+            @click="activesubtab = 1"
+            class="monitoringSubTab flex justify-center items-center border border-gray-300 h-1/6"
+            :class="{ 'active': activesubtab == 1 }"
+          >
+            1
+          </a>
+        </div>
+        <div v-if="activesubtab == 1" class="border border-gray-300 h-full flex flex-row flex-1 bg-white">
+          <div class="monitoringColumn flex flex-col flex-1 items-center">
+            <MonitoringParameter :value="spo2" title="SpO2" unit="%"></MonitoringParameter>
+            <MonitoringParameter :value="spo2Fio2Ratio" title="SpO2/FIO2" unit=""></MonitoringParameter>
+            <MonitoringParameter :value="pulse" title="Pulse" unit="l/min"></MonitoringParameter>
+          </div>
+          <div class="flex-1"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

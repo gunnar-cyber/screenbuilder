@@ -1,0 +1,89 @@
+.divMainApp {
+  position: absolute;
+  text-align: center;
+  top: 180px;
+  left: 230px;
+  background-color: #000;
+  z-index: 1;
+}
+
+.screenLayoutMiddleRow {
+  width: 100%;
+  flex: 1 1 auto;
+}
+
+.screenLayoutTopRow {
+  margin-bottom: 3px;
+}
+
+.screenLayoutMiddleLeft {
+  flex: 1 1 auto;
+}
+
+.screenLayoutBottomRow {
+  margin-top: 3px;
+}
+
+.screenLayoutMiddleRightColumn {
+  margin-left: 3px;
+}
+
+.screenLayoutMiddleLeftColumn {
+  margin-right: 3px;
+}
+
+.screenLayoutMiddleMiddle {
+  flex: 1 1;
+}
+
+.screenLayoutWindowHeight {
+  height: 350px;
+}
+
+.screen-lock {
+  position: absolute;
+  text-align: center;
+  top: 180px;
+  left: 230px;
+  z-index: 99999;
+  opacity: 0;
+}
+
+.screen-lock-message {
+  position: absolute;
+  text-align: center;
+  top: 393px;
+  left: 409px;
+  width: 367px;
+  height: 122px;
+  background-color: white;
+  border: 3px solid #afb4b0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+.screen-lock-message > img {
+  margin-left: 16px;
+  margin-right: 74px;
+}
+
+.screenshot-saved,
+.nebulizer-message {
+  background: #232522;
+  font-size: 1.35rem;
+  margin-left: 4px;
+  margin-top: 2px;
+  position: absolute;
+  top: 0;
+  border: 2px solid black;
+  color: white;
+  z-index: 99999;
+}
+.screenshot-saved {
+  width: 280px;
+}
+.nebulizer-message {
+  width: 380px;
+}

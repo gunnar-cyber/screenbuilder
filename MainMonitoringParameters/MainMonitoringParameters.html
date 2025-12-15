@@ -1,0 +1,84 @@
+<div class="flex flex-col">
+  <div v-if="inHiFlowMode">
+    <div>
+      <div class="mainCenterSideParameter" @click="isAnyDialOn ? () => {} : showNavigation(alarm, isAlarmBtnPressed)">
+        <div class="mainCenterSideNumbers">{{hiFlowValue}}</div>
+        <div class="mainCenterSideText">Flow</div>
+        <div class="mainCenterSideUnit">l/min</div>
+      </div>
+    </div>
+
+    <div class="mainCenterBottomNumbers">
+      <div
+        class="mainCenterSideParameter"
+        :style="{ 'border-right-color': expMinVolAlarmActive }"
+        @click="isAnyDialOn ? () => {} : showNavigation(alarm, isAlarmBtnPressed)"
+      >
+        <div class="mainCenterSideNumbers">{{OxygenValue}}</div>
+        <div class="mainCenterSideText">Oxygen</div>
+        <div class="mainCenterSideUnit">l/Min</div>
+      </div>
+      <div
+        class="mainCenterSideParameter"
+        :style="{ 'border-right-color': vteAlarmActive }"
+        @click="isAnyDialOn ? () => {} : showNavigation(alarm, isAlarmBtnPressed)"
+      >
+        <div class="mainCenterSideNumbers">---</div>
+        <div class="mainCenterSideText">T humidifier</div>
+        <div class="mainCenterSideUnit">°C</div>
+      </div>
+      <div class="mainCenterBottomNumbersSpo2Area"></div>
+      <div class="mainCenterBottomNumbersStyle heightHiFlow"></div>
+    </div>
+  </div>
+
+  <div v-else>
+    <div
+      class="mainCenterSideParameter"
+      :style="{ 'border-right-color': pPeakAlarmActive }"
+      @click="isAnyDialOn ? () => {} : showNavigation(alarm, isAlarmBtnPressed)"
+    >
+      <div class="mainCenterSideNumbers" :style="{ 'color': pPeakAlarmActive }">{{ pPeak }}</div>
+      <div class="mainCenterSideText">Ppeak</div>
+      <div class="mainCenterSideUnit">cmH20</div>
+    </div>
+    <div
+      class="mainCenterSideParameter"
+      :style="{ 'border-right-color': expMinVolAlarmActive }"
+      @click="isAnyDialOn ? () => {} : showNavigation(alarm, isAlarmBtnPressed)"
+    >
+      <div class="mainCenterSideNumbers" :style="{ 'color': expMinVolAlarmActive }">{{ expMinVol }}</div>
+      <div class="mainCenterSideText">ExpMinVol</div>
+      <div class="mainCenterSideUnit">l/Min</div>
+    </div>
+    <div
+      class="mainCenterSideParameter"
+      :style="{ 'border-right-color': vteAlarmActive }"
+      @click="isAnyDialOn ? () => {} : showNavigation(alarm, isAlarmBtnPressed)"
+    >
+      <div class="mainCenterSideNumbers" :style="{ 'color': vteAlarmActive }">{{ vte }}</div>
+      <div v-if="isNivMode" class="mainCenterSideText">VTE NIV</div>
+      <div v-if="!isNivMode" class="mainCenterSideText">VTE</div>
+      <div class="mainCenterSideUnit">ml</div>
+    </div>
+    <div
+      class="mainCenterSideParameter"
+      :style="{ 'border-right-color': fTotalAlarmActive }"
+      @click="isAnyDialOn ? () => {} : showNavigation(alarm, isAlarmBtnPressed)"
+    >
+      <div class="mainCenterSideNumbers" :style="{ 'color': fTotalAlarmActive }">{{ fTotal }}</div>
+      <div class="mainCenterSideText">fTotal</div>
+      <div class="mainCenterSideUnit">b/min</div>
+    </div>
+    <div class="mainCenterBottomNumbersStyle heightOtherModes">
+      <div
+        class="h-full flex flex-row justify-evenly items-center mainCenterSideSpo2 hidden"
+        v-if="spo2Connected"
+        :style="{ 'color': spo2AlarmActive ? mediumColour : null }"
+      >
+        <div class="flex-1 text-right">{{ spo2 }}%</div>
+        <div class="flex-1 text-right">SpO2</div>
+      </div>
+    </div>
+  </div>
+</div>

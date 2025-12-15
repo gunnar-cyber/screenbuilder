@@ -1,0 +1,229 @@
+.neo-natal-pos {
+  width: 80px;
+  margin: auto;
+}
+
+.neo-natal-pos.padlast {
+  padding-left: 7px;
+}
+.neo-natal-pos.padnormal {
+  padding-left: 15px;
+}
+
+.neo-natal-dim {
+  height: 50px;
+  width: 50px;
+}
+
+.mainModeHeightButtonFormat {
+  width: 210px;
+  padding-left: 110px;
+}
+
+.mainModeCommonWeightPadding {
+  padding-top: 20px;
+  padding-left: 30px;
+}
+
+.mainModeContainDiv {
+  padding-top: 7px;
+  position: relative;
+  background-color: #1f5192;
+}
+
+.mainModeSecondaryContainDiv {
+  width: 570px;
+  padding-left: 7px;
+}
+
+.mainModeContainer {
+  margin: 7px auto;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.mainModePreOpPadDiv {
+  padding-right: 10px;
+}
+
+.mainModeWeightLbl {
+  font-size: xx-large;
+}
+
+.mainModeIBWPadding {
+  padding-left: 10px;
+}
+
+.mainModeLastPatPadTop {
+  padding-top: 25px;
+}
+
+.mainModeLastPatPadLeft {
+  padding-left: 205px;
+}
+
+.mainModeTableWidth {
+  width: 100%;
+}
+
+.mainModePowerOffDiv {
+  color: white;
+  padding-top: 5px;
+  font-size: 14px;
+}
+
+.mainModetabs {
+  overflow: hidden;
+}
+
+.mainModetabs a {
+  height: 40px;
+  line-height: 40px;
+  float: left;
+  width: 33.35%;
+  border-right: 2px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.mainModetabs a:last-child {
+  border-right: none;
+}
+
+.mainModetabs a.active {
+  background-color: #1f5192;
+  width: 33.3%;
+  border-bottom: none;
+}
+
+.mainModeCommonPaddingDiv {
+  padding-bottom: 15px;
+}
+
+.mainModeCommonPaddingBotDiv {
+  padding-bottom: 30px;
+}
+
+.mainModeAdultLastPatTd {
+  height: 70px;
+  width: 170px;
+  padding-top: 15px;
+}
+
+.mainModeTabContent {
+  background-color: #1f5192;
+  height: 180px;
+}
+
+.mainModeWidthPadWeight {
+  width: 250px;
+  padding-right: 130px;
+}
+
+.mainModeGenderPadding {
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.mainModeGenderPaddingLastPatient {
+  padding-top: 30px;
+  padding-left: 80px;
+}
+.mainModeGenderPaddingLastPatientNeo {
+  padding-top: 20px;
+}
+
+.adultPedText {
+  width: 100px;
+  height: 100px;
+}
+
+#mainModeAdultPedNeoButton {
+  background-color: #afb4b0;
+  font-size: medium;
+  color: black;
+  height: 40px;
+  font-size: large;
+  width: 140px;
+}
+
+#mainModeAdultPedNeoButton.active {
+  background-color: green;
+  color: white;
+}
+
+.mainModePeOpButton {
+  background-color: #afb4b0;
+  font-size: medium;
+  width: 150px;
+  height: 40px;
+  color: black;
+}
+
+.mainModeVentButton {
+  background-color: #afb4b0;
+  font-size: 20px;
+  width: 404px;
+  height: 40px;
+}
+
+.mainModeWeightPad {
+  padding-left: 168px;
+  position: absolute;
+  top: 340px;
+}
+.mainModeWeightPad.textcolor {
+  color: #1a325b;
+}
+
+/** standby **/
+
+.standByMainDiv {
+  background-color: #ffff00;
+}
+
+.standByMainDiv.large {
+  height: 132px;
+}
+
+.standByTop {
+  width: 570px;
+  padding-left: 7px;
+}
+
+.standByContents {
+  justify-content: center;
+}
+
+.standByWarning {
+  position: absolute;
+  left: 175px;
+  top: 18px;
+  height: 40px;
+}
+
+.standByText {
+  padding-top: 7px;
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.standByStartVentText {
+  font-size: 14px;
+  font-weight: normal;
+  position: absolute;
+  left: 170px;
+  top: 90px;
+}
+
+.standByTime {
+  font-family: arial;
+  font-size: 22px;
+}
+
+.blackoutView {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}

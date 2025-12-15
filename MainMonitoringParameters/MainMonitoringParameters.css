@@ -1,0 +1,53 @@
+.mainCenterSideParameter {
+  flex: 1 1 auto;
+  margin-bottom: 3px;
+  background-color: rgb(35, 37, 34);
+  padding-right: 5px;
+  border-right: 5px solid rgba(0, 0, 0, 0);
+  text-align: right;
+  color: white;
+}
+
+.heightOtherModes {
+  height: 52px;
+  /* flex: 0 0 auto;
+  padding-right: 5px;
+  background-color: #232522;
+  color: white; */
+}
+.heightHiFlow {
+  height: 32px;
+  /* flex: 0 0 auto;
+  padding-right: 5px;
+  background-color: #232522;
+  color: white; */
+}
+.mainCenterBottomNumbersStyle {
+  flex: 0 0 auto;
+  padding-right: 5px;
+  background-color: #232522;
+  color: white;
+}
+.mainCenterBottomNumbersSpo2Area {
+  height: 117px;
+  padding-right: 5px;
+  background-color: #232522;
+  margin-bottom: 3px;
+}
+
+.mainCenterSideNumbers {
+  font-size: 70px;
+  line-height: 60px;
+}
+
+.mainCenterSideText {
+  font-size: 13px;
+}
+
+.mainCenterSideUnit {
+  font-size: 11px;
+}
+
+.mainCenterSideSpo2 {
+  font-size: 16px;
+}

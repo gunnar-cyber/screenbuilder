@@ -1,0 +1,197 @@
+.modesButton {
+  background-color: #C1C7C9;
+  font-size: medium;
+  color: black;
+  height: 40px;
+  width: 120px;
+  margin-right: 10px;
+}
+
+.modesTitleText {
+  color: black;
+  font-size: 19.2px;
+  background-color: #dfdfdf;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modesHeading {
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.modesButtonWidthLong {
+  width: 250px;
+}
+
+.modesButton.cpr {
+  flex: 0 0 auto;
+  color: #ff0000;
+  margin-left: 12px;
+}
+
+.modesButton.active {
+  background-color: green;
+  color: white;
+}
+
+.modesButton.disabled, .modesButtonAction.disabled {
+  border: 2px solid #767776;
+  background-color: transparent;
+  opacity: 0.2;
+  cursor: default;
+}
+
+.modesButtonAction {
+  background-color: #C1C7C9;
+  font-size: medium;
+  color: black;
+  height: 40px;
+  width: 120px;
+  flex: 0 0 auto;
+}
+
+.modesMain {
+  z-index: 1;
+  text-align: left; /* TODO remove center align from global */
+}
+
+.modesSecondMainDiv {
+  background-color: #dfdfdf;
+  padding: 8px;
+
+  position: absolute;
+  right: 0;
+}
+
+.modesFirstModeDiv {
+  height: 385px;
+  background-color: #ffffff;
+  border: 2px solid #d2d2d2;
+  padding: 8px;
+}
+
+.modesTdTable {
+  padding-top: 10px;
+}
+
+.modesActionTopPad {
+  margin-top: 8px;
+}
+
+.modesActionDivMargin {
+  margin-right: 10px;
+  margin-left: 131px;
+}
+
+/**** Controls ****/
+.modesSecondModeDiv {
+  height: 407px;
+  width: 540px;
+  background-color: #dfdfdf;
+  padding: 8px;
+  padding-left: 0;
+}
+
+.modesTabButtons {
+  width: 150px;
+  flex: 0 0 auto;
+  background-color: #6F7C80;
+}
+
+.modesTabButton {
+  background-color: #C1C7C9;
+  font-size: medium;
+  color: #000;
+  height: 42px;
+  width: 100%;
+  margin-top: 2px;
+}
+.modesTabButton.first {
+  margin-top: 0;
+}
+
+.modesTabButton.active {
+  background-color: #fff;
+  color: #000;
+}
+
+.modesActiveTab {
+  flex: 1 1 auto;
+  position: relative;
+  margin-left: 7px;
+  height: 340px;
+  background-color: #ffffff;
+  border: 2px solid #d2d2d2;
+  text-align: center;
+}
+
+.modesEmptyDialWithPaddingTd {
+  width: 100px;
+  padding-left: 70px;
+}
+
+.modesDialLabel {
+  font-size: medium;
+  color: black;
+}
+
+.modesControlsActionDivMargin {
+  margin-right: 10px;
+  margin-left: 165px;
+}
+
+.modesWidthLabel {
+  margin-left: 8px;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.modesActionBasicMoreTopPad {
+  margin-top: 5px;
+}
+
+.modesButtonActionHeightShort {
+  background-color: #767776;
+  font-size: medium;
+  color: #000;
+  height: 40px;
+  width: 145px;
+}
+
+.modesButtonActionHeightShort.active {
+  border: 2px solid #ffff00;
+}
+
+.modesTable {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.modesTable tr {
+  height: 31%;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.modesTable td {
+  width: 33%;
+  text-align: center;
+  vertical-align: middle;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modesInfoText {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+}

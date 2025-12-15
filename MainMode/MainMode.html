@@ -1,0 +1,183 @@
+<div class="mainModeContainDiv">
+  <div class="standByTop">
+    <div class="standByMainDiv large">
+      <div class="standByContents">
+        <img class="standByWarning" src="../../img/Standby/warning.png" />
+        <div class="standByText">Standby</div>
+        <div :style="{ 'visibility': hasPatient ? 'visible' : 'hidden' }" class="standByTime">{{standByTime}}</div>
+      </div>
+      <div class="standByStartVentText">
+        <div v-if="hasPatient">
+          No ventilation delivered to the patient.<br />
+          Deactivate humidifier during Standby.
+        </div>
+        <div v-else>To deliver ventilation to the patient, touch start ventilation.</div>
+      </div>
+    </div>
+  </div>
+  <div class="mainModeSecondaryContainDiv">
+    <div id="tabs" class="mainModeContainer">
+      <div class="mainModetabs">
+        <a
+          @click="activetab=1"
+          :class="[ activetab === 1 ? 'active' : '' ]"
+          :style="[isAnyDialOn ? {pointerEvents:'none'} : {pointerEvents:'all'}]"
+        >
+          Neonatal
+        </a>
+        <a
+          @click="activetab=2"
+          :class="[ activetab === 2 ? 'active' : '' ]"
+          :style="[isAnyDialOn ? {pointerEvents:'none'} : {pointerEvents:'all'}]"
+        >
+          Adult/Ped.
+        </a>
+        <a
+          @click="activetab=3"
+          :class="[ activetab === 3 ? 'active' : '' ]"
+          :style="[isAnyDialOn ? {pointerEvents:'none'} : {pointerEvents:'all'}]"
+        >
+          Last patient
+        </a>
+      </div>
+      <div v-if="activetab === 1" class="mainModeTabContent">
+        <table class="mainModeTableWidth">
+          <tr>
+            <td class="mainModeAdultLastPatTd">
+              <div class="mainModeCommonPaddingDiv">
+                <button
+                  id="mainModeAdultPedNeoButton"
+                  @click="activeNeoNatal=1"
+                  :class="[ activeNeoNatal === 1 ? 'active' : '' ]"
+                  :disabled="isAnyDialOn"
+                >
+                  Neonatal 1
+                </button>
+              </div>
+              <div class="mainModeCommonPaddingDiv">
+                <button
+                  id="mainModeAdultPedNeoButton"
+                  @click="activeNeoNatal=2"
+                  :class="[ activeNeoNatal === 2 ? 'active' : '' ]"
+                  :disabled="isAnyDialOn"
+                >
+                  Neonatal 2
+                </button>
+              </div>
+              <div class="mainModeCommonPaddingBotDiv">
+                <button
+                  id="mainModeAdultPedNeoButton"
+                  @click="activeNeoNatal=3"
+                  :class="[ activeNeoNatal === 3 ? 'active' : '' ]"
+                  :disabled="isAnyDialOn"
+                >
+                  Neonatal 3
+                </button>
+              </div>
+            </td>
+            <td>
+              <div class="neo-natal-pos padnormal">
+                <img src="../../img/Monitoring/neo-natal.png" class="neo-natal-dim" />
+              </div>
+              <div class="flex flex-row">
+                <div class="mainModeWidthPadWeight">
+                  <Dial :dialType="dialTypeWeight" :screenType="mDialScreenType" :currentMode="whatModeAreWeIn"></Dial>
+                  <div class="mainModeWeightPad" :style="[inHiFlowMode ? 'color:#1a325b' : '']">Weight</div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div v-if="activetab === 2" class="mainModeTabContent">
+        <table class="mainModeTableWidth">
+          <tr>
+            <td class="mainModeAdultLastPatTd">
+              <div class="mainModeCommonPaddingDiv">
+                <button
+                  id="mainModeAdultPedNeoButton"
+                  @click="activeAdultPedType=1"
+                  :class="[ activeAdultPedType === 1 ? 'active' : '' ]"
+                  :disabled="isAnyDialOn"
+                >
+                  Adult/Ped. 1
+                </button>
+              </div>
+              <div class="mainModeCommonPaddingDiv">
+                <button
+                  id="mainModeAdultPedNeoButton"
+                  @click="activeAdultPedType=2"
+                  :class="[ activeAdultPedType === 2 ? 'active' : '' ]"
+                  :disabled="isAnyDialOn"
+                >
+                  Adult/Ped. 2
+                </button>
+              </div>
+              <div class="mainModeCommonPaddingBotDiv">
+                <button
+                  id="mainModeAdultPedNeoButton"
+                  @click="activeAdultPedType=3"
+                  :class="[ activeAdultPedType === 3 ? 'active' : '' ]"
+                  :disabled="isAnyDialOn"
+                >
+                  Adult/Ped. 3
+                </button>
+              </div>
+            </td>
+            <td class="mainModeGenderPadding">
+              <Gender :screenTypeP="screenType"></Gender>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div v-if="activetab === 3" class="mainModeTabContent">
+        <table class="mainModeTableWidth">
+          <tr v-if="!isLastPatientOn">
+            <td><div class="adultPedText">Adult/Ped.</div></td>
+            <td class="mainModeGenderPaddingLastPatient">
+              <Gender :screenTypeP="screenType"></Gender>
+            </td>
+          </tr>
+          <tr v-if="isLastPatientOn && (getLastPatient == 0 || getLastPatient == 1)">
+            <td><div class="adultPedText">Adult/Ped.</div></td>
+            <td class="mainModeGenderPaddingLastPatient">
+              <Gender :screenTypeP="screenType"></Gender>
+            </td>
+          </tr>
+          <tr v-if="isLastPatientOn && getLastPatient == 2">
+            <td><div class="adultPedText">Neonatal</div></td>
+            <td class="mainModeGenderPaddingLastPatientNeo">
+              <div class="neo-natal-pos padlast">
+                <img src="../../img/Monitoring/neo-natal.png" class="neo-natal-dim" />
+              </div>
+              <div class="flex flex-row">
+                <div class="mainModeWidthPadWeight">
+                  <Dial :dialType="dialTypeWeight" :screenType="screenType" :currentMode="whatModeAreWeIn"></Dial>
+                  <div class="mainModeWeightPad textcolor">Weight</div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="flex flex-row">
+      <div class="mainModePreOpPadDiv">
+        <button class="mainModePeOpButton" :disabled="isAnyDialOn">Preop check</button>
+      </div>
+      <div>
+        <button @click="startVent()" class="mainModeVentButton" :disabled="isAnyDialOn">
+          {{ whatModeAreWeIn === 'HiFlowO2' ? 'Start therapy' : 'Start ventilation' }}
+        </button>
+      </div>
+    </div>
+    <div class="mainModePowerOffDiv">To Power off, press power/standby key > 3 s</div>
+  </div>
+
+  <div v-if="areAnyWindowsOpen" class="blackoutView">
+    <div class="standByMainDiv standbySmallHeight leftColumnWidth">
+      <div class="standByText">Standby</div>
+      <div :style="{ 'visibility': hasPatient ? 'visible' : 'hidden' }" class="standByTime">{{standByTime}}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div style="z-index: 1; position: absolute">
+  <div
+    id="entire-screen"
+    class="divMainApp screenSize"
+    :class="[isNightMode ? 'night-mode' : '']"
+    v-if="isPowerButtonOn"
+  >
+    <div class="screenshot-saved" v-if="showingScreenshotSaved">Screenshot has been saved</div>
+    <div class="nebulizer-message" v-if="showingNebulizerMessage">Nebulizer is active</div>
+    <div class="flex flex-col h-full">
+      <TopMode class="screenLayoutTopRow topRowHeight"></TopMode>
+
+      <div class="flex flex-row screenLayoutMiddleRow">
+        <MainMode v-if="isInStandby" class="screenLayoutMiddleLeft"></MainMode>
+
+        <MainMonitoringParameters
+          v-if="!isInStandby"
+          class="screenLayoutMiddleLeftColumn leftColumnWidth"
+        ></MainMonitoringParameters>
+        <div v-if="!isInStandby" class="screenLayoutMiddleMiddle">
+          <HiFlowGraphicLayout v-if="isLayoutTwoPresent && isHiFlowModeOn"></HiFlowGraphicLayout>
+          <WaveformGraphicLayout v-if="isLayoutTwoPresent && !isHiFlowModeOn"></WaveformGraphicLayout>
+        </div>
+
+        <MainControls class="screenLayoutMiddleRightColumn rightColumnWidth"></MainControls>
+      </div>
+
+      <BottomNav class="screenLayoutBottomRow bottomRowHeight"></BottomNav>
+    </div>
+
+    <!-- Windows -->
+    <Modes v-if="isModesNavBtnPressed"></Modes>
+    <Controls v-if="isControlsNavBtnPressed"></Controls>
+    <Events v-if="isEventsBtnPressed"></Events>
+    <Monitoring v-if="isMonitoringBtnPressed"></Monitoring>
+    <Tools v-if="isToolsBtnPressed"></Tools>
+    <Graphics v-if="isGraphicsNavBtnPressed"></Graphics>
+    <System v-if="isSystemNavBtnPressed"></System>
+    <Alarms v-if="isAlarmsNavBtnPressed"></Alarms>
+    <StandByConfirm v-if="isStandByConfirmBtnPressed"></StandByConfirm>
+  </div>
+  <div v-if="screenLocked" @click="checkScreenLock" class="screen-lock screenSize"></div>
+  <div v-if="showingScreenLock" class="screen-lock-message" :class="[isNightMode ? 'night-mode' : '']">
+    <img src="@/img/lock.png" alt="lock" width="50" />
+    Screen is locked!
+  </div>
+  <Loading class="divMainApp" v-if="isLoadingDone"></Loading>
+</div>

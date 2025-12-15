@@ -1,0 +1,115 @@
+.monitoringMain {
+  position: absolute;
+  background-color: #dfdfdf;
+}
+
+.monitoringSideText {
+  font-size: small;
+}
+
+.monitoringTabFirstDiv {
+  background-color: #8c979a;
+}
+
+.monitoringColumn {
+  margin-left: 60px;
+}
+
+.monitoringMenuButton {
+  position: absolute;
+  top: 493px;
+  z-index: 1;
+}
+
+.monitoringCloseButtonDiv {
+  width: 30px;
+  height: 30px;
+  background-color: #c1c7c9;
+  color: #fff;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.monitoringTabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 45px;
+}
+
+.monitoringTabs a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  border-left: 2px solid;
+  border-color: rgba(156, 163, 175, var(--tw-border-opacity));
+  cursor: pointer;
+}
+
+.monitoringTabs a:last-child {
+  border-right: 1px solid #ccc;
+}
+
+.monitoringTabs a.active {
+  background-color: #dfdfdf;
+}
+
+.monitoringTabs div.monitoringTabsFiller {
+  flex: 2;
+  background-color: #8c979a;
+}
+
+.mainArea {
+  flex: 1 1;
+}
+
+.monitoringTabContent {
+  background-color: #fff;
+  position: relative;
+}
+
+/* overlaps the content to produce the missing border on active */
+.monitoringSubTabs {
+  width: 150.307px;
+  flex: 0 0 auto;
+}
+
+.monitoringSubTab {
+  position: relative;
+  left: 1px;
+  margin-left: -1px;
+  background-color: rgba(248, 250, 252, var(--tw-bg-opacity));
+}
+
+.monitoringSubTab.active {
+  border-right-color: #fff;
+  background-color: #fff;
+}
+
+#monitoringTable {
+  width: 480px;
+}
+
+.monitoringTdTable {
+  padding-left: 10px;
+}
+
+.monitoringFirstDivTableTd {
+  padding-top: 10px;
+  width: 90px;
+  text-align: left;
+}
+
+.monitoringTitleText {
+  background-color: #dfdfdf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+}

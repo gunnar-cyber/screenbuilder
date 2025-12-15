@@ -1,0 +1,180 @@
+<div class="modesMain">
+  <div class="modesTitleText topRowHeightAndMargin rightColumnWidth">Modes</div>
+  <div v-if="showModesSelection" class="modesSecondMainDiv modesWindowHeight rightWindowWidth windowTopOffset">
+    <div class="modesFirstModeDiv">
+      <div class="modesTdTable" style="padding-top: 0">
+        <div class="modesHeading">Volume controlled (adaptive)</div>
+        <div class="flex flex-row">
+          <button
+            class="modesButton"
+            @click="modesType(modeType.SCMV_PLUS)"
+            :class="{ 'active': activeModeType === modeType.SCMV_PLUS }"
+          >
+            (S)CMV+
+          </button>
+          <button
+            class="modesButton"
+            :disabled="false"
+            @click="modesType(modeType.SIMV_PLUS)"
+            :class="{ 'active': activeModeType === modeType.SIMV_PLUS }"
+          >
+            SIMV+
+          </button>
+          <!-- default T1 setup doesn't have this button -->
+          <button
+            class="modesButton disabled hidden"
+            :disabled="isActive"
+            @click="modesType(modeType.VS)"
+            :class="{ 'active': activeModeType === modeType.VS }"
+          >
+            VS
+          </button>
+        </div>
+      </div>
+      <div class="modesTdTable">
+        <div class="modesHeading">Pressure controlled (biphasic)</div>
+        <div class="flex flex-row">
+          <button
+            class="modesButton"
+            @click="modesType(modeType.PCV_PLUS)"
+            :class="{ 'active': activeModeType === modeType.PCV_PLUS }"
+          >
+            PCV+
+          </button>
+          <button
+            class="modesButton"
+            :disabled="false"
+            @click="modesType(modeType.PSIMV_PLUS)"
+            :class="{ 'active': activeModeType === modeType.PSIMV_PLUS }"
+          >
+            PSIMV+
+          </button>
+          <button
+            class="modesButton"
+            :disabled="false"
+            @click="modesType(modeType.SPONT)"
+            :class="{ 'active': activeModeType === modeType.SPONT }"
+          >
+            SPONT
+          </button>
+        </div>
+      </div>
+      <div class="modesTdTable">
+        <div class="flex flex-row">
+          <button
+            class="modesButton disabled invisible"
+            :disabled="isActive"
+            @click="modesType(modeType.DUO_PAP)"
+            :class="{ 'active': activeModeType === modeType.DUO_PAP }"
+          >
+            DuoPAP
+          </button>
+          <button
+            class="modesButton disabled invisible"
+            :disabled="isActive"
+            @click="modesType(modeType.APRV)"
+            :class="{ 'active': activeModeType === modeType.APRV }"
+          >
+            APRV
+          </button>
+        </div>
+      </div>
+      <div class="modesTdTable" :class="{ 'invisible': true || hasHamiltonFlag }">
+        <!-- this is hidden for now, use flag when this is worked on -->
+        <div class="modesHeading">Intelligent Ventilation</div>
+        <div class="flex flex-row">
+          <button
+            class="modesButton disabled"
+            :disabled="isActive"
+            @click="modesType(modeType.ASV)"
+            :class="{ 'active': activeModeType === modeType.ASV }"
+          >
+            ASV
+          </button>
+          <button
+            class="modesButton modesButtonWidthLong disabled invisible"
+            :disabled="isActive"
+            @click="modesType(modeType.INTELLIVENT_ASV)"
+            :class="{ 'active': activeModeType === modeType.INTELLIVENT_ASV }"
+          >
+            INTELLIVENT-ASV
+          </button>
+        </div>
+      </div>
+      <div class="modesTdTable">
+        <div class="modesHeading">Noninvasive</div>
+        <div v-if="!hasHamiltonFlag" class="flex flex-row">
+          <button
+            class="modesButton disabled"
+            :disabled="isActive"
+            @click="modesType(modeType.NIV)"
+            :class="{ 'active': activeModeType === modeType.NIV }"
+          >
+            NIV
+          </button>
+          <button
+            class="modesButton disabled"
+            :disabled="isActive"
+            @click="modesType(modeType.NIV_ST)"
+            :class="{ 'active': activeModeType === modeType.NIV_ST }"
+          >
+            NIV-ST
+          </button>
+          <button
+            class="modesButton"
+            @click="modesType(modeType.HiFlowO2)"
+            :class="{ 'active': activeModeType === modeType.HiFlowO2 }"
+          >
+            HiFlowO2
+          </button>
+        </div>
+        <div v-if="hasHamiltonFlag" class="flex flex-row">
+          <button
+            class="modesButton"
+            @click="modesType(modeType.NIV)"
+            :class="{ 'active': activeModeType === modeType.NIV }"
+          >
+            NIV
+          </button>
+          <button
+            class="modesButton"
+            @click="modesType(modeType.NIV_ST)"
+            :class="{ 'active': activeModeType === modeType.NIV_ST }"
+          >
+            NIV-ST
+          </button>
+          <button
+            class="modesButton"
+            @click="modesType(modeType.HiFlowO2)"
+            :class="{ 'active': activeModeType === modeType.HiFlowO2 }"
+          >
+            HiFlowO2
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-row modesActionTopPad">
+      <button
+        class="modesButton cpr disabled invisible"
+        :disabled="isActive"
+        @click="modesType(modeType.CPR)"
+        :class="{ 'active': activeModeType === modeType.CPR }"
+      >
+        CPR
+      </button>
+      <button class="modesButtonAction modesActionDivMargin" @click="cancel()">Cancel</button>
+      <button
+        class="modesButtonAction"
+        @click="confirmModeSelection()"
+        :disabled="!disableConfirm"
+        :class="[disableConfirm ? 'selected' : 'disabled']"
+      >
+        Confirm
+      </button>
+    </div>
+  </div>
+  <div v-if="!showModesSelection">
+    <Controls :selectionMode="selectedModeType" @confirm="setMode" @cancel="cancel"></Controls>
+  </div>
+</div>

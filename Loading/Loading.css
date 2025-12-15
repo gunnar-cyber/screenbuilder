@@ -1,0 +1,72 @@
+.homeMainDiv {
+  border: solid;
+  background-color: rgb(35, 37, 34);
+  border-color: white;
+  border-radius: 5px 5px 5px 5px;
+  border-width: 5px;
+}
+
+.divHamiltonLogo {
+  padding-left: 220px;
+  padding-top: 100px;
+}
+
+.overlay {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.loadingProgressBar {
+  width: 200px;
+  background-color: #ddd;
+  height: 15px;
+}
+
+.loadingProgressBarInner {
+  width: 1%;
+  height: 15px;
+  background-color: #0063a4;
+}
+.loadingMainDiv {
+  background-color: white;
+  width: 720px;
+  height: 535px;
+}
+
+hr {
+  border: 2px solid #1e78b3;
+}
+
+.loadingProgressDiv {
+  padding-top: 50px;
+  padding-left: 120px;
+}
+
+.loadingDisclaimer {
+  position: absolute;
+  padding-left: 450px;
+  padding-top: 20px;
+  color: #0063a4;
+}
+
+.loadingStartUp {
+  position: fixed;
+  padding-left: 40px;
+  padding-top: 45px;
+  color: #0063a4;
+}
+
+.loadingMainProgressDiv {
+  padding-top: 280px;
+}
+
+.loadingLogoPadding {
+  padding-left: 390px;
+}
