@@ -1,0 +1,249 @@
+<div class="controlsMain controlsWindowHeight rightWindowWidth windowTopOffset">
+  <div class="flex flex-col controlsTabButtons" :class="{ 'selectingMode': isSelectingMode }">
+    <button
+      class="controlsTabButton first"
+      @click="activetab = 1"
+      :class="{ 'active': activetab === 1 }"
+      :disabled="isAnyDialOn"
+    >
+      Basic
+    </button>
+    <button
+      v-if="currentMode !== 'HiFlowO2'"
+      class="controlsTabButton"
+      @click="activetab = 2"
+      :class="{ 'active': activetab === 2 }"
+      :disabled="isAnyDialOn"
+    >
+      More
+    </button>
+    <button
+      v-if="(currentMode === 'SIMV+' || currentMode === 'SPONT' || currentMode === 'NIV')"
+      class="controlsTabButton"
+      @click="activetab = 3"
+      :class="{ 'active': activetab === 3 }"
+      :disabled="isAnyDialOn"
+    >
+      Apnea
+    </button>
+    <button class="controlsTabButton gap"></button>
+    <button class="controlsTabButton gap"></button>
+
+    <button v-if="startVentEnabled" @click="activetab = 4" class="controlsTabButton" :disabled="isAnyDialOn">
+      Patient
+    </button>
+  </div>
+  <div class="controlsRightSide">
+    <div v-if="activetab === 1" class="controlsActiveTab">
+      <!-- APVcmv mode dials, 3x3 grid -->
+      <!-- note this is flex pretending to be table -->
+
+      <table class="controlsTable">
+        <div class="absolute flex mt-4" v-if="modeLabel === 'HiFlowO2'">
+          <div class="mx-2">
+            <svg width="50" height="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <!-- Triangle outline - more squat/wider -->
+              <path
+                d="M50 20 L88 75 L12 75 Z"
+                fill="none"
+                stroke="#666666"
+                stroke-width="5"
+                stroke-linejoin="round"
+                stroke-linecap="round"
+              />
+
+              <!-- Exclamation mark stem -->
+              <rect x="46" y="35" width="8" height="25" fill="#666666" rx="4" />
+
+              <!-- Exclamation mark dot -->
+              <circle cx="50" cy="67" r="4" fill="#666666" />
+            </svg>
+          </div>
+          <p class="text-left">
+            Use only interfaces<br />intended for high flow<br />
+            O2.<br />
+            The use of unsuitable<br />interfaces poses a risk to<br />
+            the patient.<br />
+            Active humidification is<br />mandatory.
+          </p>
+        </div>
+
+        <tr v-for="itemsMain in controls">
+          <td v-for="itemsChild in itemsMain">
+            <div v-if="itemsChild.dialType !== ''">
+              <div
+                v-if="itemsChild.dialType === 'pControl' && modeLabel === 'PSIMV+' && greenTickImagePsync === greenTickOn"
+              >
+                <div v-show="psyncEnabled">
+                  <Dial :id="pinsp" :dialType="pinsp" :screenType="mDialScreenType" :currentMode="currentMode"></Dial>
+                </div>
+                <div v-show="!psyncEnabled">
+                  <Dial
+                    :id="pControlPSIMVID"
+                    :dialType="pControl"
+                    :screenType="mDialScreenType"
+                    :currentMode="currentMode"
+                  ></Dial>
+                </div>
+              </div>
+              <template v-else>
+                <div
+                  :class="[(psyncEnabled && itemsChild.dialType === 'pSupport' && modeLabel === 'PSIMV+') ? 'controlsPsupportDialsNotActive' : 'controlsPsupportDialsActive']"
+                >
+                  <Dial
+                    :id="itemsChild.dialType"
+                    :dialType="itemsChild.dialType"
+                    :screenType="mDialScreenType"
+                    :currentMode="currentMode"
+                  ></Dial>
+                </div>
+              </template>
+            </div>
+            <template v-else-if="itemsChild.miscData">
+              <div :style="{paddingTop: padTop + 'px'}">
+                <div class="flex flex-row controlsPadLeft" v-if="psyncVisible">
+                  <img
+                    :style="[isAnyDialOn ? {pointerEvents: 'none'} : {pointerEvents: 'all'}]"
+                    :src="greenTickImagePsync"
+                    @click="toggleImage('psync')"
+                    alt="PSynce"
+                    class="controlsGreenTick"
+                  />&nbsp;&nbsp;<span class="controlsSpanImg">PSync</span>
+                </div>
+                <div :class="miscDataCls">
+                  <div class="flex flex-row" v-if="tiVisible">TI: {{ ti }} s</div>
+                  <div class="flex flex-row" v-if="ieVisible">I:E: {{ ie }}</div>
+                  <div class="flex flex-row" v-if="teVisible">TE: {{ te }} s</div>
+                  <div class="flex flex-row" v-if="minVolLabel">MinVol: {{calculateMinVolValue}} l/min</div>
+                </div>
+              </div>
+            </template>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div v-if="activetab === 2" class="controlsActiveTab">
+      <table class="controlsTable">
+        <tr v-for="itemsMain in controlsMore">
+          <td v-for="itemsChild in itemsMain">
+            <div v-if="itemsChild.dialType !== ''">
+              <Dial :dialType="itemsChild.dialType" :screenType="mDialScreenType" :currentMode="currentMode"></Dial>
+            </div>
+            <template v-else-if="itemsChild.miscData">
+              <div :style="{paddingTop: padTop + 'px'}">
+                <div class="flex flex-row controlsPadLeft" v-if="sighVisible">
+                  <img
+                    :src="greenTickImageSigh"
+                    @click="toggleImage('sigh')"
+                    alt="Sigh"
+                    class="controlsGreenTick"
+                  />&nbsp;&nbsp;<span class="controlsSpanImg">Sigh</span>
+                </div>
+              </div>
+            </template>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div v-if="activetab === 3" class="controlsActiveTab">
+      <table class="controlsTable">
+        <tr v-for="itemsMain in controlsApnea">
+          <td v-for="itemsChild in itemsMain">
+            <div
+              v-if="itemsChild.dialType !== ''"
+              :class="[isAutoTicked ? 'controlsApneaDialsNotActive' : 'controlsApneaDialsActive']"
+              :style="[isAutoTicked ? {pointerEvents: 'none'} : {pointerEvents: 'all'}]"
+            >
+              <div v-if="hideAutoControls">
+                <Dial :dialType="itemsChild.dialType" :screenType="mDialScreenType" :currentMode="currentMode"></Dial>
+              </div>
+            </div>
+            <template v-else-if="itemsChild.miscData">
+              <div>
+                <div class="flex flex-row" :style="{paddingTop: padTop + 'px'}" v-if="itemsChild.type === 'backup'">
+                  <img
+                    :style="[isAnyDialOn ? {pointerEvents: 'none'} : {pointerEvents: 'all'}]"
+                    :src="greenTickBackUp"
+                    @click="toggleImage('back')"
+                    alt="Backup"
+                    class="controlsGreenTick"
+                  />&nbsp;&nbsp;<span class="controlsSpanImg">Backup</span>
+                </div>
+                <div class="flex flex-row controlsAutoPadLeft" v-if="itemsChild.type === 'auto' && hideAutoControls">
+                  <img
+                    :style="[isAnyDialOn ? {pointerEvents: 'none'} : {pointerEvents: 'all'}]"
+                    :src="greenTickAuto"
+                    @click="toggleImage('auto')"
+                    alt="Automatic"
+                    class="controlsGreenTick"
+                  />&nbsp;&nbsp;<span class="controlsSpanImg">Automatic</span>
+                </div>
+                <div class="flex flex-row controlsBackUp" v-if="itemsChild.type === 'label'">Backup mode:</div>
+                <div class="controlsBackUpModeText" v-if="itemsChild.type === 'label'">{{backUpMode}}</div>
+              </div>
+            </template>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div v-if="activetab === 4" class="controlsActiveTab">
+      <div class="controlsDivGenderPointer" v-if="getPatientType === male || getPatientType === female">
+        <Gender :screenTypeP="mDialScreenType"></Gender>
+      </div>
+      <div class="controlsDivGenderPointer neo-pos" v-if="getPatientType === neonatal">
+        <div class="neo-natal-pad">
+          <img src="../../img/Monitoring/NeoOn.png" />
+        </div>
+        <div class="flex flex-row">
+          <div class="mainModeWidthPadWeight">
+            <Dial :dialType="dialTypeWeight" :screenType="mDialScreenType" :currentMode="whatModeAreWeIn"></Dial>
+          </div>
+        </div>
+      </div>
+      <div class="controlsDivPaddingTop">
+        <hr class="controlsVentTimeHr" />
+        <span class="controlsFontSizeXLarge">Ventilation time</span><br />
+        <div class="controlsFontSizeLarge"><VentTimer></VentTimer></div>
+        <div class="controlsDivPaddingTop">
+          <button
+            @click="reset()"
+            class="controlsButtonActionHeightShort controlsControlsActionDivMargin"
+            :class="{ 'selected': activeSetMode === 1 }"
+            :disabled="isAnyDialOn"
+          >
+            Reset
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div v-if="isSelectingMode" class="controlsWidthLabel">{{modeLabel}}</div>
+    <div v-if="!isSelectingMode" class="controlsCloseButton" @click="close">X</div>
+
+    <div v-if="isSelectingMode" class="flex flex-row controlsActionBasicMoreTopPad">
+      <button
+        @click="cancel()"
+        class="controlsButtonActionHeightShort controlsControlsActionDivMargin"
+        :class="{ 'selected': activeSetMode === 1 }"
+        :disabled="isAnyDialOn"
+      >
+        Cancel
+      </button>
+      <button
+        @click="confirm()"
+        class="controlsButtonActionHeightShort"
+        :class="{ 'selected': activeSetMode === 2 }"
+        :disabled="isAnyDialOn"
+      >
+        Confirm
+      </button>
+    </div>
+  </div>
+  <div
+    v-if="!isSelectingMode"
+    class="absolute right-0 bottom-0 bottomRowHeight flex flex-col justify-center"
+    @click="close"
+  >
+    <div class="controlsLabel">Controls</div>
+  </div>
+</div>

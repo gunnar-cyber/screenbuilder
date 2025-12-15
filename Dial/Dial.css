@@ -1,0 +1,49 @@
+/* TODO make these configurable, controls window needs it black */
+.dialSVGTextOn {
+  fill: white;
+  font-size: 1rem;
+}
+
+.dialSVGTextOff {
+  fill: black;
+  font-size: large;
+}
+.dialSVGNumberTextDisabledLabel {
+  fill: #1a325b;
+  font-size: large;
+}
+
+.dialSVGNumberTextOff {
+  fill: black;
+  font-size: 26px;
+}
+
+.dialSVGNumberTextDisabled {
+  fill: #1a325b;
+  font-size: 26px;
+}
+
+.dialSVGNumberTextOffLastPatient {
+  fill: #1a325b;
+  font-size: 26px;
+}
+
+.dialSVGTextOffLastPatient {
+  fill: #1a325b;
+  font-size: large;
+}
+
+.dialSVGNumberTextOn {
+  fill: white;
+  font-size: 26px;
+}
+
+.dialSVGTextSmall {
+  font-size: medium;
+}
+
+.dialSVGLabelTextWithPad {
+  padding-left: 10px;
+  color: white;
+  font-size: large;
+}

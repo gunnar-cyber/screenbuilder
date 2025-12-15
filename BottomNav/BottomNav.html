@@ -1,0 +1,46 @@
+<div class="flex flex-row bottomNavMainDiv">
+  <!--  <button-->
+  <!--    @click="isMonitoringEnabled ? { click: showNavigation(monitor,isSystemNavBtnPressed) } : {}"-->
+  <!--    class="bottomNavButton bottomNavMonitoring leftColumnWidth"-->
+  <!--    :class="{ 'disabled': !isMonitoringEnabled }">-->
+  <!--    Monitoring-->
+  <!--  </button>-->
+  <!--  TODO: temp for tradeshow-->
+  <button
+    @click="showNavigation(monitor, isMonitorNavBtnPressed)"
+    class="bottomNavButton bottomNavMonitoring leftColumnWidth"
+    :class="{ 'disabled': !isMonitoringEnabled }"
+    :disabled="!isMonitoringEnabled"
+  >
+    Monitoring
+  </button>
+  <button class="bottomNavButton" @click="showNavigation(tools, isToolsNavBtnPressed)">Tools</button>
+  <button class="bottomNavButton" @click="showNavigation(events, isEventsNavBtnPressed)">Events</button>
+
+  <button class="bottomNavButton" @click="showNavigation(system, isSystemNavBtnPressed)">System</button>
+  <div class="bottomNavRightColumn rightColumnWidth">
+    <button class="bottomNavButton bottomNavHumid" :class="{ 'disabled': !isHumidifierConnected }"></button>
+    <div class="bottomNavButton last bottomNavElec justify-between">
+      <div
+        class="flex flex-col justify-items-center items-center"
+        style="margin-left: 8px; flex: 2 2"
+        v-if="isSilenced"
+      >
+        <img src="../../img/BottomNav/AlarmSilence.png" class="bottomNavAlarmSilenceImage" />
+        <div class="bottomNavAlarmSilenceTimer">{{ silencedTime }}</div>
+      </div>
+      <div class="bottomNavWidthWifiBlue" v-if="!isSilenced">
+        <img src="../../img/BottomNav/BlueTooth.png" class="bottomNavWifiBlueHeight" />
+      </div>
+      <div class="bottomNavWidthWifiBlue" v-if="!isSilenced">
+        <img src="../../img/BottomNav/Wifi.png" class="bottomNavWifiBlueHeight" />
+      </div>
+      <div class="bottomNavBatteryContainer left">
+        <Battery :chargePercent="leftBatteryPercent" :charging="isCharging" class="bottomNavBattery"></Battery>
+      </div>
+      <div class="bottomNavBatteryContainer">
+        <Battery :chargePercent="rightBatteryPercent" :charging="isCharging" class="bottomNavBattery"></Battery>
+      </div>
+    </div>
+  </div>
+</div>

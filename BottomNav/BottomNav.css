@@ -1,0 +1,95 @@
+.bottomNavMainDiv {
+  font-size: larger;
+  color: white;
+}
+
+.bottomNavButton {
+  margin-right: 3px;
+  background-color: #232522;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 auto;
+}
+
+.bottomNavButton.last {
+  margin-right: 0;
+}
+
+.bottomNavButton.disabled {
+  color: black;
+}
+
+.bottomNavMonitoring {
+  flex: 0 0 auto;
+}
+
+.bottomNavBatteryContainer {
+  flex: 1 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bottomNavBatteryContainer.left {
+  margin-left: 10px;
+}
+
+.bottomNavBattery {
+  width: 100%;
+  height: calc(100% - 4px);
+}
+
+.bottomNavTool {
+  width: 18.9%;
+}
+
+.bottomNavEvents {
+  width: 18.9%;
+}
+
+.bottomNavSystem {
+  width: 18.8%;
+}
+
+.bottomNavElec {
+  flex: 2 2;
+}
+
+.bottomNavHumid {
+  background-image: url("../../img/BottomNav/Humidifier.png");
+  background-repeat: no-repeat;
+  background-size: auto 45%;
+  background-position: 50%;
+  flex: 1 1;
+}
+
+.bottomNavHumid.disabled {
+  background-image: url("../../img/BottomNav/HumidifierDisabled.png");
+}
+
+.bottomNavWifiBlueHeight {
+  height: 20px;
+}
+
+.bottomNavWidthWifiBlue {
+  margin-left: 4px;
+  flex: 1 1;
+}
+
+.bottomNavAlarmSilenceTimer {
+  height: 10px;
+  font-size: 0.6em;
+  font-family: arial;
+}
+
+.bottomNavAlarmSilenceImage {
+  height: 17px;
+  width: auto;
+}
+
+.bottomNavRightColumn {
+  display: flex;
+  flex-direction: row;
+}

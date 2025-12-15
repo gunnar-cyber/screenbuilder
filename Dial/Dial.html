@@ -1,0 +1,118 @@
+<div>
+  <InnerDial
+    @toggleInnerDialEvent="toggleDialEvent"
+    :currentCountP="currentCount"
+    :customHeightP="customHeight"
+    :customWidthP="customWidth"
+    :customPaddingP="customPadding"
+    :whichDialIsOnP="isOn"
+    :onDialBackgroundColorP="onDialBackgroundColor"
+    :offDialBackgroundColorP="offDialBackgroundColor"
+    :maxHardP="maxHard"
+    :minHardP="minHard"
+    :maxModeP="maxMode"
+    :minModeP="minMode"
+    :screenTypeP="screenType"
+    :isOffCount="dialType === 'flowTrigger' && currentCount > maxMode"
+    :newOuterGreyCircle="outerDialCircle"
+    :showMinOrangeDial="showMinOrangeDial"
+    :showMaxOrangeDial="showMaxOrangeDial"
+    :currentDialType="dialType"
+  >
+    <template v-if="dialType === 'flowTrigger' && currentCount > maxMode">
+      <text
+        class="dialSVGNumberText"
+        x="52"
+        y="55"
+        :class="[isOn ? styleNumberTextOn : styleNumberTextOff]"
+        text-anchor="middle"
+        stroke-width="1px"
+        dy=".1em"
+      >
+        Off
+      </text>
+    </template>
+    <template v-else-if="dialType === 'ie'">
+      <text
+        class="dialSVGNumberText"
+        x="52"
+        y="55"
+        :class="[isOn ? styleNumberTextOn : styleNumberTextOff]"
+        text-anchor="middle"
+        stroke-width="1px"
+        dy=".1em"
+      >
+        {{ieOptions[currentCount]}}
+      </text>
+      <text
+        class="dialSVGTextSmall"
+        :style="{fill: dialTextColor}"
+        v-if="isOn"
+        x="0"
+        y="95"
+        text-anchor="middle"
+        dy=".1em"
+      >
+        {{ieOptions[minHard]}}
+      </text>
+      <text
+        class="dialSVGTextSmall"
+        :style="{fill: dialTextColor}"
+        v-if="isOn"
+        x="100"
+        y="95"
+        text-anchor="middle"
+        dy=".1em"
+      >
+        {{ieOptions[maxHard]}}
+      </text>
+    </template>
+    <template v-else>
+      <text
+        class="dialSVGNumberText"
+        x="52"
+        y="43"
+        :class="[isOn ? styleNumberTextOn : styleNumberTextOff]"
+        text-anchor="middle"
+        stroke-width="1px"
+        dy=".1em"
+      >
+        {{currentCountDisplay}}
+      </text>
+      <text :class="[isOn ? styleTextOn : styleTextOff]" x="50" y="68" text-anchor="middle" dy=".1em">
+        {{dialText}}
+      </text>
+      <text
+        class="dialSVGTextSmall"
+        :style="{fill: dialTextColor}"
+        v-if="isOn"
+        x="5"
+        y="95"
+        text-anchor="middle"
+        dy=".1em"
+      >
+        {{minHard}}
+      </text>
+      <text
+        class="dialSVGTextSmall"
+        :style="{fill: dialTextColor}"
+        v-if="isOn"
+        x="105"
+        y="95"
+        text-anchor="middle"
+        dy=".1em"
+      >
+        {{maxHard}}
+      </text>
+    </template>
+  </InnerDial>
+
+  <span
+    v-if="showOuterDialText"
+    :class="[dialLabelTextPad ? dialSVGLabelTextWithPad : styleTextOn]"
+    :style="{color: dialTextColor}"
+    dy=".1em"
+  >
+    {{dialLabel}}
+  </span>
+</div>
