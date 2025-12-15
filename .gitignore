@@ -1,0 +1,16 @@
+lib/.nyc_output
+lib/coverage
+lib/node_modules
+.DS_Store
+lib/dist
+dist
+device/hamilton-t1/.vscode/settings.json
+node_modules
+build-scripts/tools
+
+.idea
+vetur.config.js
+.yarn/cache
+yarn-error.log*
+yarn-debug.log*
+.env
