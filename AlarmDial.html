@@ -1,0 +1,50 @@
+<div>
+  <div class="dialAlarmLabel" v-html:="retDialObject.nameOfDial"></div>
+  <svg
+    @click="toggleDial(dialType)"
+    class="dialAlarmSVGCursor"
+    viewBox="0 0 100 100"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g>
+      <circle cx="50" cy="50" r="45" stroke="#c1c7c9" fill="none" stroke-width="6" />
+      <circle
+        v-if="isOn"
+        class="dialAlarmBackgroundGreyCircle"
+        :r="47"
+        cx="50"
+        cy="50"
+        :style="{strokeDasharray: `214,${dashGap}`}"
+      />
+      <circle
+        v-if="isOn"
+        class="dialAlarmRedDial"
+        cx="50"
+        cy="50"
+        r="47"
+        :style="{strokeDasharray: `${currentPercentCount},${dashGap}`}"
+        :stroke="currentPercentCount == 0 ? 'none' :`${strokeValue}`"
+      />
+      <circle
+        :style="[ (isOn && !hideShowOffImage) ? {fill: '#FFA500'} : {fill: 'transparent'}]"
+        cx="50"
+        cy="50"
+        r="40"
+        fill=""
+      />
+    </g>
+    <image v-if="hideShowOffImage" x="10" y="-50" :href="offImage" height="200px" width="81px" />
+    <text
+      v-if="showText"
+      :class="[isOn ? dialAlarmSVGTextOn : dialAlarmSVGTextOff ]"
+      x="50"
+      y="50"
+      text-anchor="middle"
+      dominant-baseline="middle"
+      stroke-width="1px"
+      dy=".1em"
+    >
+      {{valueShownInDial}}
+    </text>
+  </svg>
+</div>
