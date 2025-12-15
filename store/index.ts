@@ -1,0 +1,30 @@
+import { createPinia } from "pinia";
+import { useDeviceStore, useVentilatorStore, useFeatureFlagsStore } from "@screenbuilder/components";
+import { getHamiltonT1State } from "@/store/HamiltonT1State";
+import { useNavigationStore } from "@/store/navigation";
+import { useMainModeStore } from "@/store/MainMode";
+import { useAlarmDialStore } from "@/store/AlarmDial";
+import { usePatientStore } from "@screenbuilder/components";
+import { useSpinnerResultsStore } from "@/store/SpinnerResults";
+import { useAlarmStore } from "@/store/Alarms";
+import { useSpinnerSelectionStore } from "@/store/SpinnerSelection";
+import { useLayoutStore } from "@/store/layout";
+import { useGraphicWaveformStore } from "@/store/graphicsAndWaveForms";
+import { useStandbyStore } from "@/store/standBy";
+
+export const store = createPinia();
+
+export const DeviceState = useDeviceStore(store);
+export const VentilatorState = useVentilatorStore(store);
+export const HamiltonT1State = getHamiltonT1State(store);
+export const NavigationState = useNavigationStore(store);
+export const MainModeState = useMainModeStore(store);
+export const AlarmDialState = useAlarmDialStore(store);
+export const PatientState = usePatientStore(store);
+export const SpinnerResultState = useSpinnerResultsStore(store);
+export const AlarmState = useAlarmStore(store);
+export const SpinnerSelectionState = useSpinnerSelectionStore(store);
+export const LayoutState = useLayoutStore(store);
+export const GraphicWaveformState = useGraphicWaveformStore(store);
+export const StandbyStoreState = useStandbyStore(store);
+export const FeatureFlagsStoreState = useFeatureFlagsStore(store);
