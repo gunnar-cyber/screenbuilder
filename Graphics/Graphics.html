@@ -1,0 +1,61 @@
+<div
+  :class="[ !startVentEnabled ? 'graphicsTabFirstWithStandByDiv' : 'graphicsTabFirstNoStandByDiv' ]"
+>
+  <div class="graphicsCloseButtonDiv">
+    <button @click="close()"></button>
+  </div>
+  <div class="graphicsTabContent">
+    <div class="graphicsTopButton">
+      <table>
+        <tr>
+          <td class="graphicsTdTable">
+            <div>
+              <img src="../../img/Graphics/LayoutOne.png"/><br />
+              <button
+                id="graphicsButton"
+                @click="changeLayout(layout1)"
+                :class="[ activeButton === 1 ? 'active' : '' ]"
+              >
+                Layout 1
+              </button>
+            </div>
+          </td>
+          <td class="graphicsTdTable">
+            <div>
+              <img src="../../img/Graphics/LayoutTwo.png"/><br />
+              <button
+                id="graphicsButton"
+                @click="changeLayout(layout2)"
+                :class="[ activeButton === 2 ? 'active' : '' ]"
+              >
+                Layout 2
+              </button>
+            </div>
+          </td>
+          <td class="graphicsTdTable">
+            <div>
+              <img src="../../img/Graphics/LayoutThree.png"/><br />
+              <button
+                id="graphicsButton"
+                @click="changeLayout(layout3)"
+                :class="[ activeButton === 3 ? 'active' : '' ]"
+              >
+                Layout 3
+              </button>
+            </div>
+          </td>
+          <td class="graphicsTdTable">
+            <div class="graphicsFirstDivTableTd">
+              <img src="../../img/Graphics/LayoutFour.png"/><br />
+              <button
+                id="graphicsButton"
+                @click="changeLayout(layout4)"
+                :class="[ activeButton === 4 ? 'active' : '' ]"
+              >Layout 4</button>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

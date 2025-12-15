@@ -1,0 +1,97 @@
+<div v-if="screenTypeP === 'vent'">
+  <div class="flex flex-row" :class="[ genderTopMainDiv === 1 ? 'genderTopMainDivControl' : 'genderTopMainDivStart' ]">
+    <div>
+      <div
+        class="genderImgFloatL"
+        :class="[ genderImgFloatL === 1 ? 'genderImgFloatLControl' : 'genderImgFloatLStart' ]"
+      >
+        <img :src="genderImgMale" class="genderImageHeightDis" />
+      </div>
+      <button
+        @click="setGender(0)"
+        :class="activeGenderBtnM"
+        :disabled="isAnyDialOn || screenTypeP == 'lastpatient' || inHiFlowMode"
+      >
+        Male
+      </button>
+      &nbsp;&nbsp;
+    </div>
+    <div>
+      <button
+        @click="setGender(1)"
+        :class="activeGenderBtnF"
+        :disabled="isAnyDialOn || screenTypeP == 'lastpatient' || inHiFlowMode"
+      >
+        Female
+      </button>
+      <div
+        class="genderImgFloatR"
+        :class="[ genderImgFloatR === 1 ? 'genderImgFloatRControl' : 'genderImgFloatRStart' ]"
+      >
+        <img :src="genderImgFemale" class="genderImageHeightDis" />
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-row">
+    <div
+      :class="[ genderHeightButtonFormat === 1 ? 'genderHeightButtonFormatControl' : 'genderHeightButtonFormatStart']"
+    >
+      <Dial :dialType="dialTypeHeight" :screenType="screenTypeP" :currentMode="whatModeAreWeIn"></Dial>
+    </div>
+    <div
+      :style="[inHiFlowMode || screenTypeP == 'lastpatient' ? {color: '#1a325b'} : {color:'white'}]"
+      :class="[ genderCommonWeightPadding === 1 ? 'genderCommonWeightPaddingControl flex flex-row' : 'genderCommonWeightPaddingStart flex flex-row']"
+    >
+      <div>
+        <label class="genderWeightLbl"> {{getCurrentIBW}} </label>
+      </div>
+      <div>
+        <label class="genderIBWPadding"> IBW</label><br />
+        <label>kg</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div v-if="screenTypeP === 'lastpatient'">
+  <div class="flex flex-row" :class="[ genderTopMainDiv === 1 ? 'genderTopMainDivControl' : 'genderTopMainDivStart' ]">
+    <div>
+      <div
+        class="genderImgFloatL"
+        :class="[ genderImgFloatL === 1 ? 'genderImgFloatLControl' : 'genderImgFloatLStart' ]"
+      >
+        <img :src="genderImgMale" class="genderImageHeightDis" />
+      </div>
+      <button :class="activeGenderBtnM" :disabled="isAnyDialOn || screenTypeP == 'lastpatient'">Male</button>
+      &nbsp;&nbsp;
+    </div>
+    <div>
+      <button :class="activeGenderBtnF" :disabled="isAnyDialOn || screenTypeP == 'lastpatient'">Female</button>
+      <div
+        class="genderImgFloatR"
+        :class="[ genderImgFloatR === 1 ? 'genderImgFloatRControl' : 'genderImgFloatRStart' ]"
+      >
+        <img :src="genderImgFemale" class="genderImageHeightDis" />
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-row">
+    <div
+      :class="[ genderHeightButtonFormat === 1 ? 'genderHeightButtonFormatControl' : 'genderHeightButtonFormatStart']"
+    >
+      <Dial :dialType="dialTypeHeight" :screenType="screenTypeP" :currentMode="whatModeAreWeIn"></Dial>
+    </div>
+    <div
+      :style="[inHiFlowMode || screenTypeP == 'lastpatient' ? {color: '#1a325b'} : {color:'white'}]"
+      :class="[ genderCommonWeightPadding === 1 ? 'genderCommonWeightPaddingControl flex flex-row' : 'genderCommonWeightPaddingStart flex flex-row']"
+    >
+      <div>
+        <label class="genderWeightLbl"> {{lastPatientIBW}}</label>
+      </div>
+      <div>
+        <label class="genderIBWPadding"> IBW</label><br />
+        <label>kg</label>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="eveContainer">
+  <div class="eveSubContainer bottomRowHeightAndMargin" @click="close">Events</div>
+  <div class="eveMain windowBottomOffset windowRightOffset bottomWindowSize font-light flex flex-col">
+    <div class="eveTabFirstDiv bg-blueGray-200">
+      <div class="eveCloseButtonDiv" @click="close">X</div>
+      <div class="eveTabs leftColumnWidthAsMarginEvents">
+        <div class="eveTabsItem">All</div>
+      </div>
+    </div>
+    <div class="eveTblContainer">
+      <div class="eveTabContent">
+        <div class="eveTblSubContainer">
+          <table class="eveTblWidth">
+            <tbody>
+              <tr
+                v-for="evt in activeEvents"
+                :style="[(evt.priority === 'High') ? {backgroundColor: 'red'} : (evt.priority === 'Low') ? {backgroundColor: `${styleInActive}`} : {backgroundColor : ''}]"
+                class="eveTblRowAlg"
+                style="width: 100px"
+              >
+                <td class="eveTblTdDis">
+                  <div class="eveTblRowDate">{{evt.date}}</div>
+                  <div class="eveTblRowType">{{evt.type}}</div>
+                  <div class="eveTblRowMsg">{{evt.msg}}</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

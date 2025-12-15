@@ -1,0 +1,70 @@
+<div class="hardwarePanelMainDiv">
+  <div class="hardwarePanelPowerDiv">
+    <img
+      :src="powerButton"
+      alt="Power Buttonddf"
+      class="hardwarePanelPowerImg"
+      v-long-press="{ delay: 1000, interval: 1000, onHold: powerButtonHeld, onHoldEnd: powerButtonHeldEnd, onPress: () => powerButtonChange(true), onPressEnd: () => powerButtonChange(false) }"
+    />
+  </div>
+  <div class="hardwarePanelBatteryDiv">
+    <div
+      class="hardwarePanelLight battery"
+      :class="{ 'hardwarePanelLightGreen flash': isCharging, 'hardwarePanelLightGreen': isChargedAndPluggedIn }"
+    ></div>
+    <img src="../../img/HamiltonSideControl/battery-icon.png" class="hardwarePanelBatteryImg" />
+    <div
+      class="hardwarePanelLight battery"
+      :class="{ 'hardwarePanelLightGreen flash': isCharging, 'hardwarePanelLightGreen': isChargedAndPluggedIn }"
+    ></div>
+  </div>
+  <div class="hardwarePanelBatteryText">
+    <div>2</div>
+    <div>1</div>
+  </div>
+
+  <div class="hardwarePanelButtonContainer">
+    <div class="hardwarePanelButtonRow">
+      <div class="hardwarePanelLight" :class="{ 'hardwarePanelLightGreen': isLight1On }"></div>
+      <div
+        class="hardwarePanelButton hardwarePanelButtonBrightness hardwarePanelButtonLeft"
+        @click="nightModeButtonPressed"
+      ></div>
+      <div
+        class="hardwarePanelButton hardwarePanelButtonLock hardwarePanelButtonRight"
+        @click="screenLockButtonPressed"
+      ></div>
+      <div class="hardwarePanelLight" :class="{ 'hardwarePanelLightGreen': isLight2On }"></div>
+    </div>
+    <div class="hardwarePanelButtonRow">
+      <div class="hardwarePanelLight" :class="{ 'hardwarePanelLightGreen': isLight3On }"></div>
+      <div class="hardwarePanelButton hardwarePanelButtonManualBreath hardwarePanelButtonLeft"></div>
+      <div
+        class="hardwarePanelButton hardwarePanelButtonOxygen hardwarePanelButtonRight"
+        @click="o2ButtonPressed"
+      ></div>
+      <div class="hardwarePanelLight" :class="{ 'hardwarePanelLightGreen': isLight4On }"></div>
+    </div>
+    <div class="hardwarePanelButtonRow">
+      <div class="hardwarePanelLight" :class="{ 'hardwarePanelLightGreen': isLight5On }"></div>
+      <div
+        class="hardwarePanelButton hardwarePanelButtonPrint hardwarePanelButtonLeft"
+        @click="printScreenButtonPressed"
+      ></div>
+      <div
+        class="hardwarePanelButton hardwarePanelButtonNebulizer hardwarePanelButtonRight"
+        @click="nebulizerButtonPressed"
+      ></div>
+      <div class="hardwarePanelLight" :class="{ 'hardwarePanelLightGreen': isLight6On }"></div>
+    </div>
+    <div class="hardwarePanelButtonRow">
+      <div class="hardwarePanelLight" :class="[alarmButtonClass]"></div>
+      <div
+        class="hardwarePanelButton hardwarePanelButtonAudioPause hardwarePanelButtonLeft"
+        @click="silenceButtonPressed"
+      >
+        <div class="hardwarePanelButtonAudioPauseText">2 MIN.</div>
+      </div>
+    </div>
+  </div>
+</div>

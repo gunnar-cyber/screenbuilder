@@ -1,0 +1,155 @@
+.hardwarePanelMainDiv {
+  padding-top: 20px;
+  padding-left: 0px;
+  width: 154px;
+  height: 374px;
+}
+.hardwarePanelPowerDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.hardwarePanelPowerImg {
+  height: 63px;
+  width: 63px;
+}
+
+.hardwarePanelBatteryDiv {
+  justify-content: center;
+  flex: 1 1;
+  display: flex;
+  flex-direction: row;
+  margin-top: 27px;
+}
+
+.hardwarePanelBatteryText {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 52px;
+  color: #fff;
+  font-size: 12px;
+  margin-top: -3px;
+}
+
+.hardwarePanelBatteryImg {
+  height: 14px;
+  width: 30px;
+}
+
+.hardwarePanelButtonContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.hardwarePanelButtonRow {
+  flex: 1 1;
+  display: flex;
+  flex-direction: row;
+  margin-top: 16px;
+}
+
+.hardwarePanelButton {
+  flex: 1 1;
+  width: 100px;
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.hardwarePanelButtonLeft {
+  margin-left: 1px;
+  margin-right: 2px;
+}
+
+.hardwarePanelButtonRight {
+  margin-left: 1px;
+}
+
+.hardwarePanelButtonBrightness {
+  background-image: url('../../img/HamiltonSideControl/brightness.png');
+}
+
+.hardwarePanelButtonLock {
+  background-image: url('../../img/HamiltonSideControl/lock.png');
+}
+
+.hardwarePanelButtonManualBreath {
+  background-image: url('../../img/HamiltonSideControl/manual-breath.png');
+}
+
+.hardwarePanelButtonOxygen {
+  background-image: url('../../img/HamiltonSideControl/oxygen.png');
+}
+
+.hardwarePanelButtonPrint {
+  background-image: url('../../img/HamiltonSideControl/print.png');
+}
+
+.hardwarePanelButtonNebulizer {
+  background-image: url('../../img/HamiltonSideControl/nebulizer.png');
+}
+
+.hardwarePanelButtonAudioPause {
+  background-image: url('../../img/HamiltonSideControl/audio-pause.png');
+  margin-right: calc(1px + 10px); /* margin + light width */
+  position: relative;
+}
+
+.hardwarePanelButtonAudioPauseText {
+  color: #fff;
+  right: 20px;
+  top: 14px;
+  position: absolute;
+  font-size: 12px;
+}
+
+.hardwarePanelLight {
+  background-image: url('../../img/HamiltonSideControl/light-off.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  flex: 0 0 14px;
+  height: auto;
+  margin-top: 3px;
+}
+
+.hardwarePanelLight.battery {
+  margin-top: 0px;
+}
+
+.hardwarePanelLightGreen {
+  background-image: url('../../img/HamiltonSideControl/light-green.png');
+}
+
+.hardwarePanelLightGreen.flash {
+  animation: flashGreen 1.8s infinite;
+}
+
+@keyframes flashGreen {
+  0%,20% {
+    background-image: url('../../img/HamiltonSideControl/light-green.png');
+  }
+  21%,100% {
+    background-image: url('../../img/HamiltonSideControl/light-off.png');
+  }
+}
+
+.hardwarePanelLightRed {
+  background-image: url('../../img/HamiltonSideControl/light-red.png');
+}
+
+.hardwarePanelLightRedFlash {
+  animation: flashRed 1.8s infinite;
+}
+
+@keyframes flashRed {
+  0%,20% {
+    background-image: url('../../img/HamiltonSideControl/light-red.png');
+  }
+  21%,100% {
+    background-image: url('../../img/HamiltonSideControl/light-off.png');
+  }
+}

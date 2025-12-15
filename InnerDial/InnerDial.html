@@ -1,0 +1,70 @@
+<div>
+  <svg
+    @click="toggleDial()"
+    class="dialSVGCursor"
+    :style="{width: customWidthP + 'px', height: customHeightP + 'px', paddingLeft: customPaddingP + 'px'}"
+    viewBox="0 -7 100 107"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g>
+      <circle
+        :class="[newOuterGreyCircle ? 'outerGreyCircle outerCircleColorBlue' : 'outerGreyCircle outerCircleColorGrey' ]"
+        r="46"
+        cx="50"
+        cy="50"
+        :style="{fill: whichDialIsOnP ? onDialBackgroundColorP : offDialBackgroundColorP}"
+      />
+      <!-- the background line extends slightly past the red line on either side -->
+      <circle
+        v-if="whichDialIsOnP"
+        class="backgroundGreyCircle"
+        r="47"
+        cx="50"
+        cy="50"
+        :style="{strokeDasharray: `203.4,${dashGap}`}"
+      />
+      <!-- using 2 arcs instead of a circle fixes large segment before the lowest value, path doesn't seem to work with class -->
+      <!-- https://stackoverflow.com/questions/5737975/circle-drawing-with-svgs-arc-path -->
+      <path
+        v-if="whichDialIsOnP && !isOffCount"
+        d="
+        M 50, 50
+        m -47, 0
+        a 47,47 0 1,1 94,0
+        a 47,47 0 1,1 -94,0
+        "
+        fill="none"
+        stroke="red"
+        stroke-width="4"
+        style="transform: rotate(333deg); transform-origin: 50px 50px"
+        :style="{strokeDasharray: `${currentRedDialPercent},${dashGap}`}"
+      />
+      <!-- black circle sits on the red line at the end -->
+      <circle
+        cx="10"
+        cy="74"
+        r="1.9"
+        v-if="!whichDialIsOnP && !isOffCount"
+        fill="black"
+        :style="{ transformOrigin: '50px 50px', transform: 'rotate(' + currentRotVal + 'deg)' }"
+      />
+      <circle
+        cx="3"
+        cy="74"
+        r="2.5"
+        v-if="whichDialIsOnP && showMaxOrangeDial"
+        fill="orange"
+        :style="{ transformOrigin: '50px 50px', transform: 'rotate(' + maxModeRotVal +'deg)' }"
+      />
+      <circle
+        cx="3"
+        cy="74"
+        r="2.5"
+        v-if="whichDialIsOnP && showMinOrangeDial"
+        fill="orange"
+        :style="{ transformOrigin: '50px 50px', transform: 'rotate(' + minModeRotVal +'deg)' }"
+      />
+    </g>
+    <slot></slot>
+  </svg>
+</div>

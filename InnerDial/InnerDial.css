@@ -1,0 +1,44 @@
+.dialSVGCursor:hover {
+  cursor: pointer;
+}
+
+.point {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.outerGreyCircle {
+  transform-origin: 50px 50px;
+  stroke-width: 6;
+}
+
+.outerCircleColorGrey {
+  stroke: #c1c7c9;
+}
+.outerCircleColorBlue {
+  stroke: #1a325b;
+}
+
+.backgroundGreyCircle {
+  transform: rotate(146deg);
+  transform-origin: 50px 50px;
+  fill: none;
+  stroke-width: 4;
+  stroke: #a0a0a0; /* TODO put the correct colours */
+}
+
+.circular-chart {
+  display: block;
+  margin: 10px auto;
+  max-width: 80%;
+  max-height: 250px;
+}
+
+.circle {
+  stroke: #4cc790;
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+}

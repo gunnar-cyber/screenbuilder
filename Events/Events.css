@@ -1,0 +1,99 @@
+.eveMain {
+  position: absolute;
+  background-color: #dfdfdf;
+}
+
+.eveTabFirstDiv {
+  background-color: #8c979a;
+}
+
+.eveCloseButtonDiv {
+  width: 30px;
+  height: 30px;
+  background-color: #c1c7c9;
+  color: #fff;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.eveTabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 45px;
+}
+
+.eveTabsItem {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  border-left: 2px solid;
+  border-color: rgba(156, 163, 175, var(--tw-border-opacity));
+  cursor: pointer;
+  background-color: #dfdfdf;
+}
+
+.eveTblContainer {
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+.eveTblWidth {
+  width: 100%;
+}
+
+.eveTblSubContainer {
+  height: 230px;
+}
+
+.eveTblRowDate {
+  width: 100px;
+}
+.eveTblRowAlg {
+  text-align: left;
+}
+
+.eveTblTdDis {
+  display: flex;
+}
+
+.eveTblRowType {
+  width: 100px;
+}
+
+.eveTblRowMsg {
+  width: 210px;
+}
+
+.eveSubContainer {
+  background-color: #dfdfdf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+  position: absolute;
+  bottom: 0px;
+  width: 130px;
+}
+
+.eveTabContent {
+  height: 245px;
+  width: 570px;
+  position: relative;
+  background-color: #ffffff;
+  border: 2px solid #d2d2d2;
+}
+
+.eveContainer {
+  padding-left: 305px;
+}
+
+.eveBottomBtn {
+  width: 133px;
+}

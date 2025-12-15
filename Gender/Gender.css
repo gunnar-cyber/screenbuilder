@@ -1,0 +1,85 @@
+.genderTopMainDivControl {
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.genderTopMainDivStart {
+  padding-top: 0px;
+}
+
+.genderImageHeightDis {
+  height: 45px;
+  display: inline;
+}
+
+.genderImgFloatRControl {
+  float: right;
+  padding-left: 10px;
+}
+
+.genderImgFloatRStart {
+  float: right;
+  padding-left: 10px;
+}
+
+.genderImgFloatLControl {
+  float: left;
+  padding-right: 10px;
+}
+
+.genderImgFloatLStart {
+  float: left;
+  padding-right: 10px;
+}
+
+.genderNonImageButton {
+  background-color: #afb4b0;
+  font-size: medium;
+  color: black;
+  width: 130px;
+  height: 40px;
+  font-size: large;
+}
+
+.genderNonImageButton.active {
+  background-color: green;
+  color: white;
+}
+
+.genderNonImageButtonLast {
+  border-width: 3px;
+  border-color: #1a325b;
+
+  font-size: medium;
+  color: #1a325b;
+  width: 130px;
+  height: 40px;
+  font-size: large;
+}
+
+.genderHeightButtonFormatControl {
+  padding-left: 70px;
+  padding-top: 10px;
+}
+
+.genderHeightButtonFormatStart {
+  padding-left: 115px;
+}
+
+.genderCommonWeightPaddingControl {
+  padding-top: 20px;
+  padding-left: 60px;
+}
+
+.genderCommonWeightPaddingStart {
+  padding-top: 20px;
+  padding-left: 40px;
+}
+
+.genderWeightLbl {
+  font-size: xx-large;
+}
+
+.genderIBWPadding {
+  padding-left: 4px;
+}
