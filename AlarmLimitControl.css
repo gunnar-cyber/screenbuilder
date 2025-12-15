@@ -1,0 +1,6 @@
+
+.graph {
+  margin: 2px 0;
+  height: 68px; /* needs to be even to show the border below fTotal */
+  flex: 0 0 auto;
+}

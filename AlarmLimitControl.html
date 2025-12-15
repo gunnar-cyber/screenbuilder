@@ -1,0 +1,16 @@
+<div class="flex flex-col">
+  <AlarmDial :dialType="keyDialTypeTop" :currentMode="currentMode"></AlarmDial>
+  <AlarmLimitGraph
+    class="graph"
+    :showBuffer="showOrHideBuffer"
+    :min="dialMinBottom"
+    :max="dialMaxTop"
+    :topValue="topEndCurrentCount"
+    :bottomValue="bottomEndCurrentCount"
+    :value="monitoredValue"
+    :highAlarmColour="colorForTopPriority"
+    :lowAlarmColour="colorForBottomPriority"
+    :showBottomRect="showOrHideBottomRectangle"
+  ></AlarmLimitGraph>
+  <AlarmDial :dialType="keyDialTypeBottom" :currentMode="currentMode" v-if="keyDialTypeBottom !== ''"></AlarmDial>
+</div>
