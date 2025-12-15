@@ -1,0 +1,43 @@
+.modalMask {
+  position: absolute;
+  top: 14px;
+  left: 90px;
+}
+
+.modalContainer {
+  width: 460px;
+  height: 215px;
+  padding: 5px 50px;
+  background-color: #fff;
+  border-radius: 2px;
+  border: medium solid rgb(210, 210, 210);
+}
+
+.modalHeader {
+  text-align: left;
+  font-weight: 500;
+}
+
+.alarmModalCloseButton {
+  width: 30px;
+  height: 30px;
+  background-color: #c1c7c9;
+  color: #fff;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  left: 10px;
+}
+
+li {
+  list-style-type: none;
+  position: relative;
+  padding-left: 20px;
+}
+
+li:before {
+  content: "\25BA \0020";
+  position: absolute;
+  left: 0px;
+}

@@ -1,0 +1,19 @@
+<transition name="modal">
+  <div class="modalMask">
+    <div>
+      <div class="modalContainer">
+        <div class="modalHeader">
+          <div class="alarmModalCloseButton" @click="$emit('close')">X</div>
+          {{alHelpCls.alarmHelpTitle}}
+        </div>
+
+        <div style="text-align: left; width: 400px; font-size: 9.9px;">
+          {{alHelpCls.definition}}
+          <ul>
+            <li v-for="item in alarmHelpNotes">{{ item }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</transition>

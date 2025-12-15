@@ -1,0 +1,122 @@
+.alarmsMain {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  background-color: #dfdfdf;
+}
+
+.alarmCloseButtonContainer {
+  padding: 7px;
+  flex: 0 0 auto;
+  background-color: #8c979a;
+}
+
+.alarmCloseButton {
+  width: 30px;
+  height: 30px;
+  background-color: #c1c7c9;
+  color: #fff;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.alarmBufferTbl {
+  border-spacing: 0 5px;
+  border-collapse: separate;
+  width: 545px;
+}
+
+.alarmBufferBody {
+  text-align: left;
+}
+
+.alarmsButton {
+  /* matched with the modeSideButton */
+  font-size: 19.2px;
+  width: calc(136.6827px + 3px); /* button width + margin */
+  text-align: center;
+  align-self: center;
+  padding-left: calc(8px - 3px); /* compenstate for the container padding so it lines up with the button - margin */
+  background-color: #dfdfdf;
+  right: 0px;
+  position: absolute;
+}
+
+.autoButton {
+  margin-top: 7px;
+  background-color: #c1c7c9;
+  font-size: medium;
+  color: black;
+  height: 34px;
+  width: 115px;
+}
+
+.autoButton.disabled {
+  border: 2px solid #767776;
+  background-color: transparent;
+  opacity: 0.2;
+  cursor: default;
+}
+
+/* Tabs */
+
+.alarmTabs {
+  display: flex;
+  flex-direction: row;
+  height: 45px;
+  flex: 1;
+  background-color: #8c979a;
+  justify-content: stretch;
+}
+
+.alarmTabButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c1c7c9;
+  font-size: medium;
+  color: #000;
+  height: 100%;
+  margin-left: 3px;
+  flex: 1;
+  text-align: center;
+}
+
+.alarmTabButton.gap {
+  background-color: initial;
+}
+
+.alarmTabButton.first {
+  margin-left: 0;
+}
+
+.alarmTabButton.active {
+  background-color: #dfdfdf;
+  color: #000;
+}
+
+.alarmPadTabs {
+  padding: 7px;
+  height: 100%;
+}
+
+.alarmTabContent {
+  height: 230px;
+  width: 100%;
+  position: relative;
+  background-color: #ffffff;
+  border: 2px solid #d2d2d2;
+  padding: 7px;
+}
+
+.alarmsBufferTd {
+  padding-left: 5px;
+}
+
+.alarmResetButtonPadding {
+  padding-top: 230px;
+}

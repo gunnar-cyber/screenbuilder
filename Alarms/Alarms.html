@@ -1,0 +1,108 @@
+<div>
+  <div class="alarmsMain windowBottomOffset windowRightOffset alarmsWindowTopOffset">
+    <div class="flex">
+      <div class="alarmCloseButtonContainer">
+        <div class="alarmCloseButton" @click="close">X</div>
+      </div>
+      <div class="alarmTabs">
+        <a
+          @click="setTab(1)"
+          class="alarmTabButton"
+          :class="{ 'active': whichTabToLoad == 1 }"
+          :style="[isAnyDialOn ? {pointerEvents: 'none'} : {pointerEvents: 'all'}]"
+        >
+          Limits 1
+        </a>
+        <a
+          @click="setTab(2)"
+          class="alarmTabButton"
+          :class="{ 'active': whichTabToLoad == 2 }"
+          :style="[isAnyDialOn ? {pointerEvents: 'none'} : {pointerEvents: 'all'}]"
+        >
+          Limits 2
+        </a>
+        <a class="alarmTabButton gap"></a>
+        <a
+          @click="setTab(3)"
+          class="alarmTabButton"
+          :class="{ 'active': whichTabToLoad == 3 }"
+          :style="[isAnyDialOn ? {pointerEvents: 'none'} : {pointerEvents: 'all'}]"
+        >
+          Buffer
+        </a>
+      </div>
+    </div>
+    <div class="alarmPadTabs">
+      <div v-if="whichTabToLoad === 1">
+        <div class="flex flex-col">
+          <div class="flex flex-row flex-1 alarmTabContent">
+            <AlarmLimitControl
+              :keyDialTypeTop="pressureCMH2OHighLabel"
+              :keyDialTypeBottom="pressureCMH2OLowLabel"
+              :currentMode="currentMode"
+              :monitoredValue="ppeak"
+            ></AlarmLimitControl>
+            <AlarmLimitControl
+              :keyDialTypeTop="expMinVolHighLabel"
+              :keyDialTypeBottom="expMinVolLowLabel"
+              :currentMode="currentMode"
+              :monitoredValue="expMinVol"
+            ></AlarmLimitControl>
+            <AlarmLimitControl
+              :keyDialTypeTop="fTotalHighLabel"
+              :keyDialTypeBottom="fTotalLowLabel"
+              :currentMode="currentMode"
+              :monitoredValue="ftotal"
+            ></AlarmLimitControl>
+            <AlarmLimitControl
+              :keyDialTypeTop="vTHighLabel"
+              :keyDialTypeBottom="vTLowLabel"
+              :currentMode="currentMode"
+              :monitoredValue="vte"
+            ></AlarmLimitControl>
+            <AlarmLimitControl
+              :keyDialTypeTop="apneaHighLabel"
+              :keyDialTypeBottom="apneaLowLabel"
+              :currentMode="currentMode"
+              :monitoredValue="apnea"
+            ></AlarmLimitControl>
+          </div>
+          <button v-if="startVentEnabled" class="autoButton disabled">Auto</button>
+        </div>
+      </div>
+      <div v-if="whichTabToLoad === 2" class="alarmTabContent">
+        <div class="flex flex-row">
+          <AlarmLimitControl
+            :keyDialTypeTop="oxygenHighLabel"
+            :keyDialTypeBottom="oxygenLowLabel"
+            :currentMode="currentMode"
+          ></AlarmLimitControl>
+        </div>
+      </div>
+      <div v-if="whichTabToLoad === 3" class="alarmTabContent">
+        <div style="height: 220px">
+          <table class="alarmBufferTbl">
+            <tbody class="alarmBufferBody">
+              <tr
+                :style="[(user.priority === 'High') ? {backgroundColor: `${styleActive}`, 'color': textActive} : {backgroundColor: `${styleInActive}`, 'color': textInActive}]"
+                style="height: 30px; padding-bottom: 11em"
+                v-for="user in activeAlarms"
+                :key="activeAlarms.type"
+                @click="showAlarmHelp(user.type)"
+              >
+                <td class="alarmsBufferTd">
+                  {{currentDateTime(user.timeStamp)}}&nbsp;&nbsp;&nbsp;&nbsp;{{user.title}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <AlarmModal :alarmType="alarmModalType" v-if="showModal" @close="showModal = false"></AlarmModal>
+        <div class="">
+          <button  @click="resetAlarms()" :disabled="!resetBtn" :class="[resetBtn ? 'autoButton' : 'autoButton disabled']">Reset</button>
+         </div>
+      </div>
+    </div>
+  </div>
+  <button class="alarmsButton bottomRowHeight windowBottomOffset" @click="close">Alarms</button>
+</div>
