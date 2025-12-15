@@ -1,0 +1,102 @@
+.centralContainDiv {
+  position: relative;
+}
+
+.centralInnerDialText {
+  display: block;
+  color: white;
+  font-weight: bold;
+}
+
+.centralDialColorHeight {
+  color: white;
+  height: 26px;
+}
+
+.screenSize {
+  width: 718px;
+  height: 538px;
+}
+
+/* This spans across multiple components on the top side */
+.topRowHeight {
+  height: 42px;
+}
+
+.topRowHeightAndMargin {
+  height: calc(42px + 3px);
+}
+
+/* This spans across multiple components on the bottom side */
+.bottomRowHeight {
+  height: 42px;
+}
+
+.bottomRowHeightAndMargin {
+  height: calc(42px + 3px);
+}
+
+/* This spans across multiple components on the left side */
+.leftColumnWidth {
+  width: 174px;
+}
+
+.leftColumnWidthAsMargin {
+  margin-left: 174px;
+}
+
+.leftColumnWidthAsMarginEvents {
+  margin-left: 454px;
+}
+
+/* This spans across multiple components on the right side */
+.rightColumnWidth {
+  width: 136px;
+}
+
+.middleHeight {
+  height: calc(
+    538px - (42px + 3px) - (42px + 3px)
+  ); /* screen height - topRowHeightAndMargin - bottomRowHeightAndMargin */
+}
+
+.bottomWindowSize {
+  width: calc(718px - 136px - 3px); /* screen width - rightColumnWidth - margin */
+  height: calc((538px - (42px + 3px) - (42px + 3px)) * 2 / 3); /* middleHeight * 2/3 */
+}
+
+.rightWindowWidth {
+  width: calc(718px - 174px - 3px); /* full width - leftColumnWidth - margin */
+}
+
+.modesWindowHeight {
+  height: 447px;
+}
+
+.controlsWindowHeight {
+  height: calc(447px - 42px - 3px); /* modesWindowHeight - alarms button - margin to match the controls button */
+}
+
+.standbySmallHeight {
+  height: calc(
+    1 / 3 * (447px - 42px - 3px - 42px - 3px) - 3px
+  ); /* (alarmsWindowTopOffset without topRow + margin as height) - margin */
+}
+
+.alarmsWindowTopOffset {
+  top: calc(
+    1 / 3 * (447px - 42px - 3px - 42px - 3px) + 42px + 3px
+  ); /* 1/3 of (middleHeight - bottom right 2 buttons + margins) + topRow + margin */
+}
+
+.windowTopOffset {
+  top: calc(42px + 3px); /* topRowHeight + margin */
+}
+
+.windowBottomOffset {
+  bottom: calc(42px + 3px); /* bottomRowHeight + margin */
+}
+
+.windowRightOffset {
+  right: calc(136px + 3px); /* rightColumnWidth + margin */
+}
