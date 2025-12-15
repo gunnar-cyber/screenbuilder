@@ -1,0 +1,256 @@
+[
+  {
+    "alarmTitle": "apneaHigh",
+    "priority": "High",
+    "adultPed": [{ "mode": "default", "min": 15, "max": 60, "default": 20, "override": false }],
+    "neo": [{ "mode": "default", "min": 5, "max": 60, "default": 5, "override": true }],
+    "dialText": "Apnea time",
+    "unit": "s",
+    "intDec": "int",
+    "range_and_increments": [
+      { "start": 15, "end": 60, "increment": 5, "override": false },
+      { "start": 5, "end": 15, "increment": 1, "override": true },
+      { "start": 16, "end": 60, "increment": 5, "override": true }
+    ],
+    "modesAndRanges": [{ "mode": "default", "modeMin": 0, "modeMax": 0 }],
+    "dialDefaultDependency": [{ "dep": "" }],
+    "setDefaultByDep": false
+  },
+  {
+    "alarmTitle": "expMinVolumeHigh",
+    "priority": "High",
+    "adultPed": [
+      { "mode": "default", "min": 0.1, "max": 51, "default": 1.5, "override": false },
+      { "mode": "niv", "min": 0.1, "max": 51, "default": 1.5, "override": false },
+      { "mode": "nivst", "min": 0.1, "max": 51, "default": 1.5, "override": false }
+    ],
+    "neo": [{ "mode": "default", "min": 0.03, "max": 11, "default": 1.5, "override": true }],
+    "dialText": "ExpMinVol",
+    "unit": "l/min",
+    "intDec": "dec",
+    "range_and_increments": [
+      { "start": 0.1, "end": 1.0, "increment": 0.1, "override": false },
+      { "start": 1.01, "end": 10.0, "increment": 0.5, "override": false },
+      { "start": 10.01, "end": 50.0, "increment": 1.0, "override": false },
+      { "start": 0.02, "end": 1.0, "increment": 0.01, "override": true },
+      { "start": 1.01, "end": 10, "increment": 0.1, "override": true }
+    ],
+
+    "modesAndRanges": [{ "mode": "none", "modeMin": 0, "modeMax": 0 }],
+    "dialDefaultDependency": [{ "dep": "rate" }, { "dep": "vt" }],
+    "rangeDependency": [{ "dep": "" }],
+    "setDefaultByDep": true
+  },
+  {
+    "alarmTitle": "expMinVolumeLow",
+    "priority": "High",
+    "adultPed": [
+      { "mode": "default", "min": 0.0, "max": 50, "default": 0.6, "override": false },
+      { "mode": "niv", "min": 0.0, "max": 50, "default": 0.6, "override": false },
+      { "mode": "nivst", "min": 0.0, "max": 50, "default": 0.6, "override": false }
+    ],
+    "neo": [{ "mode": "default", "min": 0.0, "max": 10, "default": 0.6, "override": true }],
+    "dialText": "ExpMinVol",
+    "unit": "l/min",
+    "intDec": "dec",
+    "range_and_increments": [
+      { "start": 0.0, "end": 1.0, "increment": 0.1, "override": false },
+      { "start": 1.01, "end": 10.0, "increment": 0.5, "override": false },
+      { "start": 10.01, "end": 51.0, "increment": 1.0, "override": false },
+      { "start": 0.0, "end": 1.0, "increment": 0.01, "override": true },
+      { "start": 1.01, "end": 10, "increment": 0.1, "override": true }
+    ],
+    "modesAndRanges": [{ "mode": "none", "modeMin": 0, "modeMax": 0 }],
+    "dialDefaultDependency": [{ "dep": "rate" }, { "dep": "vt" }],
+    "rangeDependency": [{ "dep": "" }],
+    "setDefaultByDep": true
+  },
+  {
+    "alarmTitle": "flow",
+    "priority": "Medium",
+    "neo": [{ "mode": "default", "min": 0, "max": 0, "default": 0, "override": false }],
+    "dialText": "Under Cons",
+    "unit": "",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [{ "mode": "none", "modeMin": 0, "modeMax": 0 }],
+    "dialDefaultDependency": [{ "dep": "" }],
+    "rangeDependency": [{ "dep": "" }]
+  },
+  {
+    "alarmTitle": "fTotalHigh",
+    "priority": "Medium",
+    "adultPed": [{ "mode": "default", "min": 0, "max": 99, "default": 40, "override": false }],
+    "neo": [{ "mode": "default", "min": 2, "max": 210, "default": 70, "override": false }],
+    "dialText": "fTotal",
+    "unit": "b/min",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [{ "mode": "none", "modeMin": 0, "modeMax": 0 }],
+    "dialDefaultDependency": [{ "dep": "" }],
+    "rangeDependency": [{ "dep": "" }],
+    "setDefaultByDep": false
+  },
+  {
+    "alarmTitle": "fTotalLow",
+    "priority": "Medium",
+    "adultPed": [{ "mode": "default", "min": 0, "max": 99, "default": 0, "override": false }],
+    "neo": [{ "mode": "default", "min": 0, "max": 200, "default": 0, "override": false }],
+    "dialText": "fTotal",
+    "unit": "b/min",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [{ "mode": "default", "modeMin": 0, "modeMax": 0 }],
+    "dialDefaultDependency": [{ "dep": "" }],
+    "rangeDependency": [{ "dep": "" }],
+    "setDefaultByDep": false
+  },
+  {
+    "alarmTitle": "oxygenHigh",
+    "priority": "High",
+    "adultPed": [{ "mode": "default", "min": 18, "max": 105, "default": 55, "override": false }],
+    "neo": [{ "mode": "default", "min": 18, "max": 105, "default": 55, "override": false }],
+    "dialText": "Oxygen",
+    "unit": "%",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [{ "mode": "none", "modeMin": 0, "modeMax": 0 }],
+    "dialDefaultDependency": [{ "dep": "" }],
+    "rangeDependency": [{ "dep": "" }],
+    "setDefaultByDep": false
+  },
+  {
+    "alarmTitle": "oxygenLow",
+    "priority": "High",
+    "adultPed": [{ "mode": "default", "min": 18, "max": 97, "default": 45, "override": false }],
+    "neo": [{ "mode": "default", "min": 18, "max": 97, "default": 45, "override": false }],
+    "dialText": "",
+    "unit": "",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [{ "mode": "none", "modeMin": 0, "modeMax": 0 }],
+    "dialDefaultDependency": [{ "dep": "" }],
+    "rangeDependency": [{ "dep": "" }],
+    "setDefaultByDep": false
+  },
+  {
+    "alarmTitle": "petCO2High",
+    "priority": "Medium",
+    "adultPed": [{ "mode": "default", "min": 0, "max": 0, "default": 0, "override": false }],
+    "neo": [{ "mode": "default", "min": 0, "max": 0, "default": 0, "override": false }],
+    "dialText": "Under Cons",
+    "unit": "",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [{ "mode": "none", "modeMin": 0, "modeMax": 0 }],
+    "dialDefaultDependency": [{ "dep": "" }],
+    "rangeDependency": [{ "dep": "" }],
+    "setDefaultByDep": false
+  },
+  {
+    "alarmTitle": "petCO2Low",
+    "priority": "Medium",
+    "adultPed": [{ "mode": "default", "min": 0, "max": 0, "default": 0, "override": false }],
+    "neo": [{ "mode": "default", "min": 0, "max": 0, "default": 0, "override": false }],
+    "dialText": "",
+    "unit": "",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [{ "mode": "none", "modeMin": 0, "modeMax": 0 }],
+    "dialDefaultDependency": [{ "dep": "" }],
+    "rangeDependency": [{ "dep": "" }],
+    "setDefaultByDep": false
+  },
+  {
+    "alarmTitle": "pressureCMH2OHigh",
+    "priority": "High",
+    "adultPed": [{ "mode": "default", "min": 15, "max": 70, "default": 40, "override": false }],
+    "neo": [
+      { "mode": "default", "min": 18, "max": 55, "default": 40, "override": false },
+      { "mode": "ncpap", "min": 10, "max": 55, "default": 15, "override": false },
+      { "mode": "ncpappc", "min": 10, "max": 55, "default": 15, "override": false }
+    ],
+    "dialText": "Pressure",
+    "unit": "cmH2O",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [{ "mode": "none", "modeMin": 0, "modeMax": 0 }],
+    "dialDefaultDependency": [{ "dep": "pLimit" }],
+    "rangeDependency": [{ "dep": "peep" }],
+    "setDefaultByDep": true
+  },
+  {
+    "alarmTitle": "pressureCMH2OLow",
+    "priority": "High",
+    "adultPed": [{ "mode": "default", "min": 4, "max": 60, "default": 5, "override": false }],
+    "neo": [
+      { "mode": "default", "min": 4, "max": 55, "default": 5, "override": false },
+      { "mode": "ncpap", "min": 2, "max": 55, "default": 3, "override": false },
+      { "mode": "ncpappc", "min": 2, "max": 55, "default": 5, "override": false }
+    ],
+    "dialText": "Pressure",
+    "unit": "cmH2O",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [{ "mode": "none", "modeMin": 0, "modeMax": 0 }],
+    "dialDefaultDependency": [{ "dep": "peep" }],
+    "rangeDependency": [{ "dep": "" }],
+    "setDefaultByDep": true
+  },
+  {
+    "alarmTitle": "pressureLimitation",
+    "priority": "Medium",
+    "adultPed": [{ "mode": "default", "min": 15, "max": 70, "default": 40, "override": false }],
+    "neo": [{ "mode": "default", "min": 15, "max": 70, "default": 40, "override": false }],
+    "dialText": "Under Cons",
+    "unit": "",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [{ "mode": "none", "modeMin": 0, "modeMax": 0 }],
+    "dialDefaultDependency": [{ "dep": "" }],
+    "setDefaultByDep": false
+  },
+  {
+    "alarmTitle": "vtHigh",
+    "priority": "Medium",
+    "adultPed": [{ "mode": "default", "min": 10, "max": 3050, "default": 0, "override": false }],
+    "neo": [{ "mode": "default", "min": 0.1, "max": 305, "default": 0, "override": true }],
+    "dialText": "Vt",
+    "unit": "ml",
+    "intDec": "int",
+    "range_and_increments": [
+      { "start": 5, "end": 100, "increment": 5, "override": false },
+      { "start": 101, "end": 500, "increment": 10, "override": false },
+      { "start": 501, "end": 3050, "increment": 50, "override": false },
+
+      { "start": 0.1, "end": 10, "increment": 0.1, "override": true },
+      { "start": 10.1, "end": 100, "increment": 1, "override": true },
+      { "start": 101, "end": 305, "increment": 5, "override": true }
+    ],
+    "modesAndRanges": [{ "mode": "none", "modeMin": 0, "modeMax": 0 }],
+    "dialDefaultDependency": [{ "dep": "vt" }],
+    "rangeDependency": [{ "dep": "" }],
+    "setDefaultByDep": true
+  },
+  {
+    "alarmTitle": "vtLow",
+    "priority": "Medium",
+    "adultPed": [{ "mode": "default", "min": 5, "max": 3000, "default": 0, "override": false }],
+    "neo": [{ "mode": "default", "min": 0.0, "max": 300, "default": 0, "override": true }],
+    "dialText": "Vt",
+    "unit": "ml",
+    "intDec": "int",
+    "range_and_increments": [
+      { "start": 5, "end": 100, "increment": 5, "override": false },
+      { "start": 101, "end": 500, "increment": 10, "override": false },
+      { "start": 501, "end": 3000, "increment": 50, "override": false },
+      { "start": 0.0, "end": 10, "increment": 0.1, "override": true },
+      { "start": 10.1, "end": 100, "increment": 2, "override": true },
+      { "start": 101, "end": 300, "increment": 6, "override": true }
+    ],
+    "modesAndRanges": [{ "mode": "none", "modeMin": 0, "modeMax": 0 }],
+    "dialDefaultDependency": [{ "dep": "vt" }],
+    "rangeDependency": [{ "dep": "" }],
+    "setDefaultByDep": true
+  }
+]

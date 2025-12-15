@@ -1,0 +1,14 @@
+{
+  "power": "power",
+  "contrast": "contrast",
+  "monitoring": "monitoring",
+  "tools": "tools",
+  "events": "events",
+  "system": "system",
+  "control": "control",
+  "alarm": "alarm",
+  "lung": "lung",
+  "graphic": "graphic",
+  "mode": "mode",
+  "standbyConfirm": "standbyConfirm"
+}

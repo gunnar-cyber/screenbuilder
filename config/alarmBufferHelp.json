@@ -1,0 +1,602 @@
+[
+  {
+    "type": "pPeak",
+    "alarmHelpTitle": "PPeak",
+    "definition": "Need to create error message for PPeak",
+    "HelpMessages": "Unknown PPeak."
+  },
+  {
+    "type": "expMinVol",
+    "alarmHelpTitle": "expMinVol",
+    "definition": "Need to create error message for expMinVol",
+    "HelpMessages": "Unknown expMinVol."
+  },
+  {
+    "type": "vte",
+    "alarmHelpTitle": "vte",
+    "definition": "Need to create error message for vte",
+    "HelpMessages": "Unknown vte."
+  },
+  {
+    "type": "fTotal",
+    "alarmHelpTitle": "fTotal",
+    "definition": "Need to create error message for fTotal",
+    "HelpMessages": "Unknown fTotal."
+  },
+  {
+    "type": "spo2",
+    "alarmHelpTitle": "spo2",
+    "definition": "Need to create error message for spo2",
+    "HelpMessages": "Unknown spo2."
+  },
+  {
+    "type": "cpr",
+    "alarmHelpTitle": "cpr",
+    "definition": "Need to create error message for cpr",
+    "HelpMessages": "Unknown cpr."
+  },
+  {
+    "type": "ambientState",
+    "alarmHelpTitle": "Ambient state",
+    "definition": "The inspiratory and expiratory channels are opened, letting the  patient breathe room air unassisted.",
+    "HelpMessages": "Provide alternative ventilation immediately."
+  },
+  {
+    "type": "apneaVentEnd",
+    "alarmHelpTitle": "Apnea ventilation ended",
+    "definition": "Backup mode was reset, and ventilator is again ventilating in its original support (preapnea) mode.",
+    "HelpMessages": "No action required."
+  },
+  {
+    "type": "apneaVent",
+    "alarmHelpTitle": "Apnea ventilation",
+    "definition": "Apnea backup ventilation has started. No breath delivered for the operator-set apnea time. Apnea backup ventilation is on",
+    "HelpMessages": "Check patient condition#Check trigger sensitivity#Check the control settings for the backup mode.#Consider changing the mode."
+  },
+  {
+    "type": "apnea",
+    "alarmHelpTitle": "Apnea",
+    "definition": "No patient trigger within the operator-set apnea time in APVsimv, VS, SPONT, DuoPAP, APRV, or NIV mode.Apnea backup is off",
+    "HelpMessages": "Check patient condition.#Check trigger sensitivity.#Consider changing the mode."
+  },
+  {
+    "type": "asvCanMeetTarget",
+    "alarmHelpTitle": "ASV: Cannot meet target",
+    "definition": "The operator-set %MinVol cannot be delivered, possibly due to setting conflicts or lung-protective rules.",
+    "HelpMessages": "Check patient condition.#Check the Plimit setting and adjust#if appropriate.#Consider a mode change. However, be aware that other modes may notenforce lung-protective rules"
+  },
+  {
+    "type": "batCalRequired",
+    "alarmHelpTitle": "Battery 1, 2: Calibration required",
+    "definition": "The battery requires calibration. You may continue to use the battery.",
+    "HelpMessages": "Replace the battery with a properly calibrated battery to continue ventilation."
+  },
+  {
+    "type": "batDefective",
+    "alarmHelpTitle": "Battery 1, 2: Defective",
+    "definition": "Battery defective. Ventilation continues if an alternative power source is connected.",
+    "HelpMessages": "Replace battery.#Prepare alternative ventilation.#If the problem still persists, have the ventilator serviced."
+  },
+  {
+    "type": "batRepReq",
+    "alarmHelpTitle": "Battery 1, 2: Replacement required",
+    "definition": "The battery temperature is higher than expected.",
+    "HelpMessages": "Connect the ventilator to primary power (AC or DC).#Replace the battery.#If a replacement is not available, provide alternative ventilation until the issue is resolved.#If the problem still persists, have the ventilator serviced"
+  },
+  {
+    "type": "batTempHigh",
+    "alarmHelpTitle": "Battery 1, 2: Temperature high",
+    "definition": "Battery capacity is insufficient for reliable operation and must be replaced immediately.",
+    "HelpMessages": "Remove the ventilator from the sun or other heat source.#Replace the battery.#Provide alternative ventilation until the issue is resolved.#If the problem still persists, have the ventilator serviced."
+  },
+  {
+    "type": "batWrongBat",
+    "alarmHelpTitle": "Battery 1, 2: Wrong battery",
+    "definition": "The battery in use is not the correct battery for this ventilator",
+    "HelpMessages": "Replace the battery.#Connect the ventilator to primary power (AC or DC).#Provide alternative ventilation until the issue is resolved"
+  },
+  {
+    "type": "batComError",
+    "alarmHelpTitle": "Battery communication error",
+    "definition": "Battery data is not available. Ventilation continuesr",
+    "HelpMessages": "Check the battery connectors and that the battery is installed correctly.#Make sure the battery lock is properly closed.#If the problem persists, replace the battery.#If the problem still persists, have the ventilator serviced"
+  },
+  {
+    "type": "batLow",
+    "alarmHelpTitle": "Battery low",
+    "definition": "The Battery low",
+    "HelpMessages": "Connect the ventilator to a primary power source.#Install charged battery.#If necessary, be prepared to provide alternative ventilation"
+  },
+  {
+    "type": "batTotalDis",
+    "alarmHelpTitle": "Battery totally discharged",
+    "definition": "The battery charge level is below 5%. The ventilator switches to the Ambient state",
+    "HelpMessages": "Connect the ventilator to primary power (AC or DC). Connecting to primary power also charges the battery.#Immediately provide alternative ventilation until the issue is resolved.#If the problem still persists, have the ventilator serviced"
+  },
+  {
+    "type": "blowFault",
+    "alarmHelpTitle": "Blower fault",
+    "definition": "A blower malfunction was detected. A technical alarm cannot typically be corrected by the operator. The ventilator switches to the Ambient state",
+    "HelpMessages": "Immediately provide alternative ventilation.#Have the ventilator serviced."
+  },
+  {
+    "type": "blowServRequired",
+    "alarmHelpTitle": "Blower service required",
+    "definition": "The blower has reached the end of its lifespan.",
+    "HelpMessages": "Have the ventilator serviced."
+  },
+  {
+    "type": "buzzerDef",
+    "alarmHelpTitle": "Buzzer defective",
+    "definition": "A buzzer malfunction was detected. A technical alarm cannot typically be corrected by the operator",
+    "HelpMessages": "Restart device.#Provide alternative ventilation until the issue is resolved.#If the problem persists, have the ventilator serviced"
+  },
+  {
+    "type": "checCO2Adapt",
+    "alarmHelpTitle": "Check CO2 airway adapter",
+    "definition": "Adapter disconnection, optical block, or adapter type changed",
+    "HelpMessages": "Check patient condition.#Check the airway adapter for excess moisture accumulation /contamination by secretions.#Replace / perform zero calibration on airway adapter"
+  },
+  {
+    "type": "checCo2Samp",
+    "alarmHelpTitle": "Check CO2 sampling line",
+    "definition": "The CO2 sidestream sensor sampling line is occluded by water",
+    "HelpMessages": "Check patient condition.#Replace sampling line."
+  },
+  {
+    "type": "checFlowSenWater",
+    "alarmHelpTitle": "Check flow sensor for water",
+    "definition": "Water is detected inside the flow sensor, which is affecting measurements",
+    "HelpMessages": "Remove all water from the flow sensor and flow sensor tubing.#You must position the flow sensor at a ≥ 45° angle to avoid water accumulation.#Adjust the FS alarm sensitivity control."
+  },
+  {
+    "type": "checFlowSen",
+    "alarmHelpTitle": "Check flow sensor",
+    "definition": "The flow sensor tubes are disconnected or occluded. If the alarm continues for 3 consecutive breath cycles, the External flow sensor failed alarm is generated and the ventilator switches to Sensor Failure mode",
+    "HelpMessages": "Make sure the flow sensor is the correct type for the patient (Adult/Ped or Neonatal).#Check the flow sensor connection to the ventilator.#Connect and calibrate a new flow sensor"
+  },
+  {
+    "type": "checFlowSenTubing",
+    "alarmHelpTitle": "Check flow sensor tubing",
+    "definition": "low sensor measurements are out of the expected range. If the alarm continues for 3 consecutive breath cycles, the External flow sensor failed alarm is generated and the ventilator switches to Sensor Failure mode",
+    "HelpMessages": "Check the flow sensor connection to the ventilator.#Connect and calibrate a new flow sensor."
+  },
+  {
+    "type": "checForBlockage",
+    "alarmHelpTitle": "Check for blockage",
+    "definition": "Internal pressure is above 45 cmH2O in HiFlowO2. If the pressure increases further and exceeds 50 cmH2O, the alarm becomes high priority, flow stops, and the pressure is released.",
+    "HelpMessages": "Observe the patient#Check patient interface for blockage.If no blockage is observed, consider reducing the flow to decrease pressure.#Check breathing circuit limbs and tubing for kinks"
+  },
+  {
+    "type": "checPatInt",
+    "alarmHelpTitle": "Check patient interface",
+    "definition": "Generated when using a speaking valve and the Vt low or Low pressure alarm is active. For additional alarm details when using a speaking valve, see Table 10-1.",
+    "HelpMessages": "Disconnection#Whether cuff is fully deflated#Upper airway occlusion#Speaking valve is operating properly"
+  },
+  {
+    "type": "checPLimit",
+    "alarmHelpTitle": "Check Plimit",
+    "definition": "Inspiratory pressure, including PEEP/CPAP, is above the pressure limit (Plimit). Does not apply in APVcmv, APVsimv, or ASV modes.",
+    "HelpMessages": "Check the patient for adequate ventilation.#Adjust Plimit and/or the pressure control settings, as appropriate."
+  },
+  {
+    "type": "checSettings",
+    "alarmHelpTitle": "Check settings",
+    "definition": "A change to a control or alarm setting was not saved.",
+    "HelpMessages": "Check and confirm settings, including alarms"
+  },
+  {
+    "type": "circutCaliNeed",
+    "alarmHelpTitle": "Circuit calibration needed",
+    "definition": "Low after silence. The ventilator does not have correct calibration data. Only active in nCPAP and nCPAP-PC modes.",
+    "HelpMessages": "Calibrate the neonatal breathing circuit"
+  },
+  {
+    "type": "co2CaliNeed",
+    "alarmHelpTitle": "CO2 calibration needed",
+    "definition": "A previous sensor zero calibration failed",
+    "HelpMessages": "Clean or replace airway adapter.#Perform a zero calibration of the sensor, making sure there is no source of CO2 near the airway adapter.#Replace the airway adapter.#Replace the CO2 sensor.#If the problem persists, have the ventilator serviced"
+  },
+  {
+    "type": "co2SensorDef",
+    "alarmHelpTitle": "CO2 sensor defect",
+    "definition": "The CO2 sensor signal indicates a hardware error or a third-party sensor is installed.",
+    "HelpMessages": "Disconnect the sensor from the CO2 module. Wait a few seconds, and reconnect.#Perform a zero calibration of the sensor. Ensure the sensor is attached to the airway adapter during zero calibration.#Replace the CO2 sensor. Make sure the sensor is a genuine Hamilton Medical part"
+  },
+  {
+    "type": "co2SensorDisc",
+    "alarmHelpTitle": "CO2 sensor disconnected",
+    "definition": "The CO2 module is installed, but there is no signal from the CO2 sensor. CO2 monitoring is enabled",
+    "HelpMessages": "Make sure a CO2 sensor is connected.#Check CO2 sensor connections (CO2 sensor cable to module, CO2 module to ventilator).#If the problem persists, have the ventilator serviced"
+  },
+  {
+    "type": "co2SensorTemp",
+    "alarmHelpTitle": "CO2 sensor over temperature",
+    "definition": "The temperature at the CO2 sensor is too high",
+    "HelpMessages": "Check whether the sensor is affected by an external heating source.#Remove the sensor from the airway, and disconnect the sensor from the CO2 module. Reconnect.#Verify that system is running within the specified environmental conditions. Check for excessive airway temperature, which could be caused by defective humidifier, heater wire, or probe"
+  },
+  {
+    "type": "c02SensorWarm",
+    "alarmHelpTitle": "CO2 sensor warmup",
+    "definition": "The CO2 operating temperature has not yet been reached or is unstable",
+    "HelpMessages": "Wait for the sensor to warm up"
+  },
+  {
+    "type": "deviceTempHigh",
+    "alarmHelpTitle": "Device temperature high",
+    "definition": "The internal temperature of the ventilator is higher than expected.",
+    "HelpMessages": "Remove the ventilator from the sun or other heat source.#Check the cooling fan filter and fan.#Prepare alternative ventilation.#Have the ventilator serviced."
+  },
+  {
+    "type": "discOnPatSide",
+    "alarmHelpTitle": "Disconnection on patient side",
+    "definition": "VTE is less than one eighth of the delivered VTI, and delivered VTI exceeds 50 ml. Applicable in invasive modes. For APRV and DuoPAP modes, only applicable during the pressure phase.",
+    "HelpMessages": "Check patient condition.#Check the breathing circuit for a disconnection between the patient and the flow sensor, or for other large leaks (for example, ET tube)."
+  },
+  {
+    "type": "discOnVentSide",
+    "alarmHelpTitle": "Disconnection on ventilator side",
+    "definition": "Measured VTI at the flow sensor is less than one-half of the delivered VTI, and delivered VTI exceeds 50 ml.",
+    "HelpMessages": "Check the expiratory valve: (i) Check the condition of the expiratory valve set. If anything is defective, replace. (ii) Check whether the expiratory valve is affected by any nebulizing agent. (iii) Make sure that the expiratory valve is properly installed. (iiii)Check whether there is a disconnection at the expiratory valve.#Replace the expiratory valve.#Check the flow sensor. If needed, replace the flow sensor."
+  },
+  {
+    "type": "exhalObstruc",
+    "alarmHelpTitle": "Exhalation obstructed",
+    "definition": "Either the end expiratory pressure is too high or the end expiratory flow is too low. Note that you must use an inspiratory filter to prevent contamination. The ventilator may be contaminated if no inspiratory filter is used.Not active in HiFlowO2 mode.",
+    "HelpMessages": "Check patient condition.#Check the expiratory limb for occlusion.#Check the expiratory valve set.Replace if needed.#Check the flow sensor tubes for occlusion.#Adjust breath timing controls to increase the expiratory time.#Provide alternative ventilation until the issue is resolved.#Have the ventilator serviced."
+  },
+  {
+    "type": "extConnDisabled",
+    "alarmHelpTitle": "External connections disabled",
+    "definition": "The Connectivity module is turned off. Repeated connection attempts have failed. Ventilation can continue but connection with other devices is not possible",
+    "HelpMessages": "If no patient is connected, restart the ventilator.#If the problem persists, have the ventilator serviced."
+  },
+  {
+    "type": "extFlowSensorFail",
+    "alarmHelpTitle": "External flow sensor failed",
+    "definition": "The external flow sensor does not work properly. The alarm is generated when either the Check flow sensor or Check flow sensor tubing alarm is active for 3 consecutive breath cycles. The ventilator switches to Sensor Failure mode",
+    "HelpMessages": "Check flow sensor for excessive secretions and/or water accumulation.#Provide alternative ventilation and clean the flow sensor with sterile water.#Connect and calibrate a new flow sensor."
+  },
+  {
+    "type": "fanFail",
+    "alarmHelpTitle": "Fan failure",
+    "definition": "There is a problem with the cooling fan.",
+    "HelpMessages": "Provide alternative ventilation until the issue is resolved.#Disconnect the ventilator from the patient.#Have the ventilator serviced."
+  },
+  {
+    "type": "flipFlowSen",
+    "alarmHelpTitle": "Flip the flow sensor",
+    "definition": "Either the flow sensor is connected to the breathing circuit facing the wrong direction or the flow sensor connections to the ventilator are reversed.Ventilation continues, but the ventilator corrects for the reversed signal.",
+    "HelpMessages": "Check the flow sensor. The end marked PATIENT faces the patient.#Reverse the flow sensor tube connections on the ventilator.#The blue tube attaches to the blue connector. The clear tube attaches to the white connector"
+  },
+  {
+    "type": "flowSenCalibNeed",
+    "alarmHelpTitle": "Flow sensor calibration needed",
+    "definition": "The ventilator does not have correct calibration data or automatic recalibration of the flow sensor is impossible. In Standby, may indicate that the patient group has changed. Note that flow, volume, and pressure measurements are less accurate with an uncalibrated flow sensor.",
+    "HelpMessages": "Ensure the correct flow sensor for the selected patient group is attached to the breathing circuit.#Calibrate the flow sensor as soon as possible."
+  },
+  {
+    "type": "funKeyNotOp",
+    "alarmHelpTitle": "Function key not operational",
+    "definition": "The function key is defective. Ventilation continues.",
+    "HelpMessages": "Turn off the ventilator using the Power/Standby button on the back of the device.#Have the ventilator serviced."
+  },
+  {
+    "type": "highFlow",
+    "alarmHelpTitle": "High Flow",
+    "definition": "Low after silence. Flow has reached the set limit. Only active in nCPAP and nCPAP-PC modes",
+    "HelpMessages": "Check the patient interface and breathing circuit for disconnection or excessive leakage.#Check ventilator settings and alarm limits"
+  },
+  {
+    "type": "highFreq",
+    "alarmHelpTitle": "High frequency",
+    "definition": "The measured fTotal exceeds the set alarm limit.",
+    "HelpMessages": "Check the patient for adequate ventilation (VTE).#Check alarm limits.#Check the trigger sensitivity."
+  },
+  {
+    "type": "highMinVol",
+    "alarmHelpTitle": "High minute volume",
+    "definition": "The measured ExpMinVol exceeds the set alarm limit",
+    "HelpMessages": "Check patient condition.#Check and confirm settings, including alarms."
+  },
+  {
+    "type": "highOxygen",
+    "alarmHelpTitle": "High oxygen",
+    "definition": "One of the following has occurred: (a) If the Oxygen alarm limits are set automatically, the measured oxygen is more than 5% (absolute) above the current Oxygen control setting.(b) If the Set Oxygen alarm limits manually checkbox is selected, the measured oxygen is above the set upper limit",
+    "HelpMessages": "Calibrate the O2 sensor.#Install a new O2 sensor.#Check alarm limits (if set manually)."
+  },
+  {
+    "type": "highPeep",
+    "alarmHelpTitle": "High PEEP",
+    "definition": "Monitored PEEP exceeds (set PEEP + 5 cmH2O) for two consecutive breaths. For DuoPAP and APRV only: Alarm applies to both P high and P low settings. The alarm sounds when the monitored P high exceeds (set P high + 5 cmH2O) or monitored P low exceeds (set P low + 5 cmH2O) for two consecutive breaths. If T low is set to < 3 seconds, the High PEEP alarm is disabled for P low settings. This reduces the incidence of false positive alarms",
+    "HelpMessages": "Check patient condition.#Check and confirm settings, including alarms.#Check the expiratory valve set for possible obstructions.#Check for obstructions in the expiratory limb.#Check the flow sensor tubes for occlusion"
+  },
+  {
+    "type": "highPresDurSigh",
+    "alarmHelpTitle": "High pressure during sigh",
+    "definition": "A sigh cannot be fully delivered because excessive inspiratory pressure would be required. The sigh is partially delivered",
+    "HelpMessages": "Check patient condition.#Check the artificial airway of the patient for kinks and occlusions.#Check the breathing circuit limbs and flow sensor tubes for kinks and occlusions.#Consider disabling the Sigh function."
+  },
+  {
+    "type": "highPres",
+    "alarmHelpTitle": "High pressure",
+    "definition": "Low after Audio pause is activated. The measured inspiratory pressure exceeds the set high Pressure alarm limit. The ventilator immediately closes the inspiratory valve to stop gas flow to the patient and opens the expiratory valve to reduce pressure to the PEEP/CPAP level. If the pressure reaches 15 cmH2O above the high Pressure alarm limit for longer than 5 seconds, the ventilator opens the release valve. If the pressure reaches 15 cmH2O above the high Pressure alarm limit for longer than 7 seconds, the ventilator enters the Ambient state",
+    "HelpMessages": "Check patient condition.#Adjust the Pressure alarm limit.#Check the artificial airway of the patient for kinks and occlusions.#Check the breathing circuit limbs and flow sensor tubes for kinks and occlusions.#Provide alternative ventilation once the ventilator enters the Ambient state"
+  },
+  {
+    "type": "inspVolLimit",
+    "alarmHelpTitle": "Inspiratory volume limitation",
+    "definition": "The delivered Vt is more than 1.5 times the set high Vt alarm limit. Pressure is reduced to PEEP level. The APV controls reduce the pressure for the next breath by 3 cmH2O. Disabled in noninvasive modes. For alarm details when using a speaking valve, see Table 10-1.",
+    "HelpMessages": "Reduce the ΔPsupport setting.#Adjust the high Vt alarm limit."
+  },
+  {
+    "type": "invalidComBoard",
+    "alarmHelpTitle": "Invalid communication board",
+    "definition": "The installed communication board is invalid.",
+    "HelpMessages": "Contact your Hamilton Medical technical representative.#Have the ventilator serviced."
+  },
+  {
+    "type": "irv",
+    "alarmHelpTitle": "IRV",
+    "definition": "The set I:E ratio is above 1:1, leading to inverse ratio ventilation. Does not apply in PSIMV+PSync, SPONT, NIV, or NIV-ST modes, or in HiFlowO2",
+    "HelpMessages": "Check the timing control settings"
+  },
+  {
+    "type": "jtagNotWork",
+    "alarmHelpTitle": "JTAG not working",
+    "definition": "A hardware component failed the self-test during startup",
+    "HelpMessages": "Remove the ventilator from use and have it serviced."
+  },
+  {
+    "type": "lossExtPow",
+    "alarmHelpTitle": "Loss of external power",
+    "definition": "The ventilator is running on battery power due to loss of a primary power source.",
+    "HelpMessages": "Silence the alarm.#Check integrity of connection to primary power source.#Check battery status.#Prepare for possible power loss.#Provide alternative ventilation until the issue is resolved."
+  },
+  {
+    "type": "lossOfPeep",
+    "alarmHelpTitle": "Loss of PEEP",
+    "definition": "One of the following conditions is in effect:(a) Pressure during exhalation is below (set PEEP/CPAP 3 cmH2O) for more than 10 seconds (b) Measured end-expiratory pressure is below (set PEEP/CPAP 3 cmH2O) for two consecutive breaths",
+    "HelpMessages": "Check patient condition.#Check the breathing circuit for leaks. Replace the breathing circuit, if necessary.#Check the condition of the expiratory valve set. If anything is defective, replace"
+  },
+  {
+    "type": "loudSpeakDefective",
+    "alarmHelpTitle": "Loudspeaker defective",
+    "definition": "A loudspeaker malfunction was detected. A technical alarm cannot typically be corrected by the operator. Ventilation continues",
+    "HelpMessages": "Check patient condition.#Provide alternative ventilation until the issue is resolved.#Have the ventilator serviced."
+  },
+  {
+    "type": "lowFreq",
+    "alarmHelpTitle": "Low frequency",
+    "definition": "Measured fTotal is below the set alarm limit.",
+    "HelpMessages": "Check patient condition.#Adjust the low fTotal alarm limit."
+  },
+  {
+    "type": "lowMinVol",
+    "alarmHelpTitle": "Low minute volume",
+    "definition": "Measured ExpMinVol is below the set alarm limit",
+    "HelpMessages": "Check patient condition.#Check the breathing circuit and artificial airway of the patient for leaks and/or disconnection.#Check and confirm settings, including alarms."
+  },
+  {
+    "type": "lowOxygen",
+    "alarmHelpTitle": "Low oxygen",
+    "definition": "One of the following has occurred: (i) If the Oxygen alarm limits are set automatically, the measured oxygen is more than 5% (absolute) below the current Oxygen control setting. (i) If the Set Oxygen alarm limits manually checkbox is selected, the measured oxygen is below the set lower limit",
+    "HelpMessages": "Check patient condition.#Check the oxygen supply. Provide an alternative source of oxygen, if necessary.#Calibrate the O2 sensor.#Provide alternative ventilation and install a new O2 sensor."
+  },
+  {
+    "type": "lowPress",
+    "alarmHelpTitle": "Low pressure",
+    "definition": "The set pressure during inspiration was not reached",
+    "HelpMessages": "Check patient condition.#Check the breathing circuit for a disconnection between the patient and the flow sensor, or for other large leaks"
+  },
+  {
+    "type": "maxLeakComp",
+    "alarmHelpTitle": "Maximum leak compensation",
+    "definition": "The set Vt cannot be reached due to a leak. In APVsimv and APVcmv modes only.",
+    "HelpMessages": "Check patient condition.#Inspect the system for leaks.#Suction the patient, if needed.#Ensure the high Pressure limit is appropriate.#Switch to a different ventilation mode"
+  },
+  {
+    "type": "o2SensorCalib",
+    "alarmHelpTitle": "O2 sensor calibration needed",
+    "definition": "O2 sensor calibration data is not within the expected range, or the sensor is new and requires calibration.",
+    "HelpMessages": "Calibrate the O2 sensor.#Verify temperature settings are within environmental specifications.#Replace O2 sensor if required.#Have the ventilator serviced."
+  },
+  {
+    "type": "o2SensorDefective",
+    "alarmHelpTitle": "O2 sensor defective",
+    "definition": "The O2 sensor is depleted",
+    "HelpMessages": "Install a new O2 sensor."
+  },
+  {
+    "type": "o2SensorMissing",
+    "alarmHelpTitle": "O2 sensor missing",
+    "definition": "Low priority. There is no signal from the O2 sensor.",
+    "HelpMessages": "Install an O2 sensor or use an external monitor, according to ISO 80601-2-55."
+  },
+  {
+    "type": "o2SensorNotComp",
+    "alarmHelpTitle": "O2 sensor not system compatible",
+    "definition": "The incorrect type of O2 sensor is installed.",
+    "HelpMessages": "Insure a Hamilton Medical O2 sensor is used and it is properly installed"
+  },
+  {
+    "type": "obstruction",
+    "alarmHelpTitle": "Obstruction",
+    "definition": "End-expiratory pressure > set PEEP/CPAP + 5, or Flow < 1 l/min. Only active in nCPAP and nCPAP-PC modes",
+    "HelpMessages": "Check the patient.#Check the expiratory limb for occlusion.#Check the expiratory valve set.#Check the pressure line for occlusion.#Adjust breath timing controls to increase the expiratory time.#Have the ventilator serviced."
+  },
+  {
+    "type": "optNotFound",
+    "alarmHelpTitle": "Options not found",
+    "definition": "Options were not found during startup.",
+    "HelpMessages": "Restart device.#If the problem persists, have the ventilator serviced."
+  },
+  {
+    "type": "oxygenSupFailed",
+    "alarmHelpTitle": "Oxygen supply failed",
+    "definition": "Oxygen source flow is lower than expected.",
+    "HelpMessages": "Check patient condition#Check the oxygen supply. Provide an alternative source of oxygen, if necessary.#Check the oxygen source/supply for potential leakage#Provide alternative ventilation until the issue is resolved."
+  },
+  {
+    "type": "perfLimitByHighAlt",
+    "alarmHelpTitle": "Performance limited by high altitude",
+    "definition": "Medium priority, Low after silence. The airway pressure cannot be reached at the current altitude. As long as the device remains above the altitude limit, the pressure cannot be reached, and the alarm is active",
+    "HelpMessages": "Check patient condition.#If at all possible, consider lowering altitude to reach the target performance.#Provide alternative ventilation until the issue is resolved"
+  },
+  {
+    "type": "petCo2High",
+    "alarmHelpTitle": "PetCO2 high",
+    "definition": "PetCO2 exceeds the set alarm limit",
+    "HelpMessages": "Check patient condition.#Check and confirm settings, including alarms"
+  },
+  {
+    "type": "petCo2Low",
+    "alarmHelpTitle": "PetCO2 low",
+    "definition": "PetCO2 is below the set alarm limit",
+    "HelpMessages": "Check patient condition.#Check the breathing circuit and flow sensor/artificial airway of the patient for leaks.#Check and confirm settings, including alarms."
+  },
+  {
+    "type": "pressLimitHasChanged",
+    "alarmHelpTitle": "Pressure limit has changed",
+    "definition": "The pressure limit setting (Plimit) has changed. Either the Plimit setting or the high Pressure alarm limit setting has been adjusted by the operator. Changing Plimit or the high Pressure alarm limit automatically changes the other: The high Pressure alarm limit is always 10 cmH2O greater than Plimit.",
+    "HelpMessages": "Make sure the pressure limit is high enough so that sufficient pressure can be applied for adequate breath delivery. If sufficient pressure cannot be applied, the Pressure limitation alarm is generated"
+  },
+  {
+    "type": "pressLimit",
+    "alarmHelpTitle": "Pressure limitation",
+    "definition": "Low after silence. Inspiratory pressure, including PEEP/CPAP, is above the pressure limit (Plimit). The ventilator limits applied pressure, so the target pressure or volume may not be achieved",
+    "HelpMessages": "Check the patient for adequate ventilation.#Check and confirm settings, including alarms."
+  },
+  {
+    "type": "pressNotReleased",
+    "alarmHelpTitle": "Pressure not released",
+    "definition": "Airway pressure has exceeded the Pressure limit, and the pressure was not released via the expiratory valve after 5 seconds. The ventilator enters the Ambient state",
+    "HelpMessages": "Check expiratory valve and breathing circuit for kinks and occlusions.#Provide alternative ventilation until the issue is resolved.#Have the ventilator serviced"
+  },
+  {
+    "type": "preventMaintReq",
+    "alarmHelpTitle": "Preventive maintenance required",
+    "definition": "The device was last serviced more than 1 year ago. The ventilator requires preventive maintenance",
+    "HelpMessages": "Have the ventilator serviced as soon as possible."
+  },
+  {
+    "type": "realTimeClockFail",
+    "alarmHelpTitle": "Real-time clock failure",
+    "definition": "The date and time are not set",
+    "HelpMessages": "Set the date and time (System > Settings window)."
+  },
+  {
+    "type": "realValDef",
+    "alarmHelpTitle": "Release valve defective",
+    "definition": "During the routine check of the ambient valve during the Leak test, the valve was found to be defective. The alarm is reset when a Leak test is successfully passed. Ventilation is not necessarily affected.",
+    "HelpMessages": "If the problem still persists, have the ventilator serviced as soon as possible"
+  },
+  {
+    "type": "repHEPAFilt",
+    "alarmHelpTitle": "Replace HEPA filter",
+    "definition": "The air inlet HEPA filter shows increased resistance.",
+    "HelpMessages": "Replace the HEPA filter as soon as possible"
+  },
+  {
+    "type": "repo2Sensor",
+    "alarmHelpTitle": "Replace O2 sensor",
+    "definition": "Communication error, O2 sensor is defective. Ventilation is not necessarily affected. Oxygen concentration should not be affected by this issue. Ventilation can continue",
+    "HelpMessages": "Replace O2 sensor.#If you cannot replace the O2 sensor, consider disabling it."
+  },
+  {
+    "type": "safeMode",
+    "alarmHelpTitle": "Safety mode",
+    "definition": "A hardware or software issue was detected. The ventilator switches to Safety mode",
+    "HelpMessages": "Provide alternative ventilation until the issue is resolved.#Have the ventilator serviced."
+  },
+  {
+    "type": "safeVent",
+    "alarmHelpTitle": "Safety ventilation",
+    "definition": "A hardware or software issue was detected. The ventilator switches to Safety ventilation.",
+    "HelpMessages": "Provide alternative ventilation until the issue is resolved.#Have the ventilator serviced."
+  },
+  {
+    "type": "selfTestFail",
+    "alarmHelpTitle": "Self test failed",
+    "definition": "The self test failed during startup. The Start ventilation button is unavailable. Note that if this error occurs when the device is restarting from a complete power loss, the device enters the Ambient state.",
+    "HelpMessages": "Restart device.#If the problem persists, have the ventilator serviced.#If the device enters the Ambient state, provide alternative ventilation and have the ventilator serviced."
+  },
+  {
+    "type": "speakValOff",
+    "alarmHelpTitle": "SpeakValve OFF",
+    "definition": "Speaking valve compatibility is deactivated.",
+    "HelpMessages": "Press the Audio pause key to confirm and resolve the alarm"
+  },
+  {
+    "type": "speakValOn",
+    "alarmHelpTitle": "SpeakValve ON",
+    "definition": "Speaking valve compatibility is activated.",
+    "HelpMessages": "If a speaking valve is in use, no action required.#If a speaking valve is not in use, turn off compatibility in the Controls > SpeakValve window."
+  },
+  {
+    "type": "suckManeuver",
+    "alarmHelpTitle": "Suctioning maneuver",
+    "definition": "Ventilation suppression is active, and ventilator settings are being maintained, although the ventilator is not delivering breaths.",
+    "HelpMessages": "Resume ventilation when desired by first reconnecting the patient"
+  },
+  {
+    "type": "techEvent",
+    "alarmHelpTitle": "Technical event:",
+    "definition": "A hardware or software issue was detected. A technical alarm cannot typically be corrected by the operator. Ventilation continues.",
+    "HelpMessages": "Have the ventilator serviced"
+  },
+  {
+    "type": "techFault",
+    "alarmHelpTitle": "Technical fault:",
+    "definition": "A hardware or software issue was detected. The ventilator switches to the Ambient state or to Safety ventilation.",
+    "HelpMessages": "Provide alternative ventilation until the issue is resolved.#Have the ventilator serviced."
+  },
+  {
+    "type": "techStateFail",
+    "alarmHelpTitle": "Technical state failed",
+    "definition": "There is a problem with the hardware configuration. Ventilation is not possible",
+    "HelpMessages": "Have the ventilator serviced"
+  },
+  {
+    "type": "touchNotFun",
+    "alarmHelpTitle": "Touch not functional",
+    "definition": "The touch screen is defective",
+    "HelpMessages": "Turn the ventilator off and on again.#If the problem persists, have the ventilator serviced."
+  },
+  {
+    "type": "unknownPartNumber",
+    "alarmHelpTitle": "Unknown part number",
+    "definition": "A hardware or software issue was detected. The ventilator switches to the Ambient state",
+    "HelpMessages": "Provide alternative ventilation until the issue is resolved.#Have the ventilator serviced."
+  },
+  {
+    "type": "ventOutTempHigh",
+    "alarmHelpTitle": "Vent outlet temperature high",
+    "definition": "Inspiratory temperature is too high. Ventilation continues, but if temperature stays high, the ventilator may enter the Ambient state",
+    "HelpMessages": "Check whether the room temperature exceeds the ventilator's operating temperature limit.#Check that the air intake on the device is not obstructed.#Provide alternative ventilation until the issue is resolved.#Have the ventilator serviced if temperature cannot be reduced"
+  },
+  {
+    "type": "ventCancel",
+    "alarmHelpTitle": "Ventilation canceled",
+    "definition": "A hardware or software issue was detected. The ventilator switches to the Ambient state",
+    "HelpMessages": "Provide alternative ventilation until the issue is resolved.#Contact your Hamilton Medical representative.#Have the ventilator serviced."
+  },
+  {
+    "type": "vtHigh",
+    "alarmHelpTitle": "Vt high",
+    "definition": "Measured VTE exceeds the set limit for 2 consecutive breaths. In invasive modes, if the delivered tidal volume exceeds 150% of set high Vt alarm limit (Vt > 1.5 * high Vt alarm limit), the Inspiratory volume limitation alarm is generated",
+    "HelpMessages": "Check the pressure and volume settings for potential leaks and/or disconnections.#Check and confirm settings, including alarms"
+  },
+  {
+    "type": "vtLow",
+    "alarmHelpTitle": "Vt low",
+    "definition": "Measured VTE is below the set limit for 2 consecutive breaths. High priority. When speaking valve compatibility is activated. This alarm can indicate the cuff is still inflated. See Table 10-1",
+    "HelpMessages": "If a speaking valve is in use, ensure the cuff is deflated.#Check patient condition.#Check and confirm settings, including alarms.#Check the breathing circuit and artificial airway of the patient for leaks, kinked limbs or tubing, or disconnection."
+  },
+  {
+    "type": "wrongExpiratory",
+    "alarmHelpTitle": "Wrong expiratory valve",
+    "definition": "Low after silence. The type of expiratory valve installed does not match the selected patient group, or no expiratory valve is installed. In addition to the alarm message, after attempting to start ventilation, the device displays a dialog box describing the risks of proceeding with the wrong valve. The alarm is recorded in the Events log and remains in the alarm buffer",
+    "HelpMessages": "Install the appropriate expiratory valve. To start ventilating the patient, you must confirm that you are aware of the issue by selecting either Accept or Decline in the dialog box.#By selecting Accept, you accept the risks associated with using the wrong valve for selected patient. Ventilation starts after touching Accept. This option is only to be used in emergency cases, where the appropriate expiratory valve for the patient group is not available and mechanical ventilation must be delivered.#By selecting Decline, the dialog box closes and you remain in standby"
+  }
+]

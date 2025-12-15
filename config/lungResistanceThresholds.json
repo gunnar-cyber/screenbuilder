@@ -1,0 +1,14 @@
+{
+  "normal": {
+    "min": 0,
+    "max": 4
+  },
+  "moderate": {
+    "min": 5,
+    "max": 19
+  },
+  "high": {
+    "min": 20,
+    "max": 50
+  }
+}

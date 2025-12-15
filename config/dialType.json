@@ -1,0 +1,319 @@
+[
+  {
+    "dialType": "flowTrigger",
+    "min": 0.5,
+    "max": 20,
+    "dialText": "l/min",
+    "intDec": "dec",
+    "range_and_increments": [
+      { "start": 0.5, "end": 2, "increment": 0.1 },
+      { "start": 2.1, "end": 20, "increment": 0.5 }
+    ],
+    "modesAndRanges": [],
+    "dialLabel": "Flow trigger"
+  },
+  {
+    "dialType": "hiFlowO2",
+    "min": 2,
+    "max": 100,
+    "dialText": "l/min",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [],
+    "dialLabel": "Flow"
+  },
+  {
+    "dialType": "peep",
+    "min": 0,
+    "max": 35,
+    "dialText": "cmH20",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [],
+    "dialLabel": "PEEP/CPAP"
+  },
+  {
+    "dialType": "pramp",
+    "min": 0,
+    "max": 2000,
+    "dialText": "ms",
+    "intDec": "int",
+    "range_and_increments": [
+      { "start": 0, "end": 100, "increment": 10 },
+      { "start": 101, "end": 2000, "increment": 25 }
+    ],
+    "modesAndRanges": [
+      { "mode": "pcv+", "modeMin": 0, "modeMax": 175 },
+      { "mode": "(s)cmv+", "modeMin": 0, "modeMax": 175 },
+      { "mode": "simv+", "modeMin": 0, "modeMax": 325 },
+      { "mode": "psimv+", "modeMin": 0, "modeMax": 325 },
+      { "mode": "spont", "modeMin": 0, "modeMax": 200 },
+      { "mode": "niv", "modeMin": 0, "modeMax": 200 },
+      { "mode": "asv", "modeMin": 0, "modeMax": 200 }
+    ],
+    "dialLabel": "P-ramp"
+  },
+  {
+    "dialType": "rate",
+    "min": 1,
+    "max": 80,
+    "dialText": "b/min",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [
+      { "mode": "apvcmv", "modeMin": 4, "modeMax": 60 },
+      { "mode": "pcv+", "modeMin": 1, "modeMax": 80 },
+      { "mode": "psimv+", "modeMin": 1, "modeMax": 80 },
+      { "mode": "niv-st", "modeMin": 1, "modeMax": 48 },
+      { "mode": "simv+", "modeMin": 1, "modeMax": 48 },
+      { "mode": "spont", "modeMin": 4, "modeMax": 48 },
+      { "mode": "niv", "modeMin": 4, "modeMax": 80 }
+    ],
+    "dialLabel": "Rate"
+  },
+  {
+    "dialType": "ti",
+    "min": 0.1,
+    "max": 12.0,
+    "dialText": "s",
+    "intDec": "dec",
+    "range_and_increments": [
+      { "start": 0.1, "end": 1.0, "increment": 0.01 },
+      { "start": 1.01, "end": 3.0, "increment": 0.05 },
+      { "start": 3.01, "end": 12, "increment": 0.1 }
+    ],
+    "modesAndRanges": [
+      { "mode": "simv+", "modeMin": 0.1, "modeMax": 4.2 },
+      { "mode": "psimv+", "modeMin": 0.1, "modeMax": 4.2 },
+      { "mode": "niv-st", "modeMin": 0.1, "modeMax": 4.2 }
+    ],
+    "dialLabel": "TI"
+  },
+  {
+    "dialType": "vt",
+    "min": 20,
+    "max": 2000,
+    "dialText": "ml",
+    "intDec": "int",
+    "range_and_increments": [
+      { "start": 20, "end": 100, "increment": 5 },
+      { "start": 101, "end": 1000, "increment": 10 },
+      { "start": 1001, "end": 2000, "increment": 50 }
+    ],
+    "modesAndRanges": [],
+    "dialLabel": "Vt"
+  },
+  {
+    "dialType": "oxygen",
+    "min": 21,
+    "max": 100,
+    "dialText": "%",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [],
+    "dialLabel": "Oxygen"
+  },
+  {
+    "dialType": "height",
+    "min": 30,
+    "max": 250,
+    "dialText": "cm",
+    "intDec": "int",
+    "range_and_increments": [{ "start": 30, "end": 250, "increment": 2 }],
+    "modesAndRanges": [],
+    "dialLabel": "Pat. height"
+  },
+  {
+    "dialType": "weight",
+    "min": 0.2,
+    "max": 30.0,
+    "dialText": "kg",
+    "intDec": "dec",
+    "range_and_increments": [
+      { "start": 0.2, "end": 3.0, "increment": 0.01 },
+      { "start": 3.01, "end": 15.0, "increment": 0.1 },
+      { "start": 15.01, "end": 30.0, "increment": 0.5 }
+    ],
+    "modesAndRanges": [],
+    "dialLabel": "Weight"
+  },
+  {
+    "dialType": "pSupport",
+    "min": 0,
+    "max": 60,
+    "dialText": "cmH2O",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [],
+    "dialLabel": "△Psupport"
+  },
+  {
+    "dialType": "pControl",
+    "min": 5,
+    "max": 60,
+    "dialText": "cmH2O",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [],
+    "dialLabel": "△Pcontrol"
+  },
+  {
+    "dialType": "pLimit",
+    "min": 5,
+    "max": 60,
+    "dialText": "cmH2O",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [
+      { "mode": "simv+", "modeMin": 10, "modeMax": 60 },
+      { "mode": "spont", "modeMin": 10, "modeMax": 60 },
+      { "mode": "asv", "modeMin": 10, "modeMax": 60 },
+      { "mode": "niv", "modeMin": 10, "modeMax": 60 },
+      { "mode": "niv-st", "modeMin": 10, "modeMax": 60 }
+    ],
+    "dialLabel": "Plimit"
+  },
+  {
+    "dialType": "daybright",
+    "min": 10,
+    "max": 100,
+    "dialText": "%",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [],
+    "dialLabel": "Brightness"
+  },
+  {
+    "dialType": "nightbright",
+    "min": 10,
+    "max": 100,
+    "dialText": "%",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [],
+    "dialLabel": "Brightness"
+  },
+  {
+    "dialType": "yearsystem",
+    "min": 2000,
+    "max": 2999,
+    "dialText": "",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [],
+    "dialLabel": "Year"
+  },
+  {
+    "dialType": "monthsystem",
+    "min": 1,
+    "max": 12,
+    "dialText": "",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [],
+    "dialLabel": "Month"
+  },
+  {
+    "dialType": "daysystem",
+    "min": 1,
+    "max": 31,
+    "dialText": "",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [],
+    "dialLabel": "Day"
+  },
+  {
+    "dialType": "hoursystem",
+    "min": 0,
+    "max": 23,
+    "dialText": "",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [],
+    "dialLabel": "Hours"
+  },
+  {
+    "dialType": "minutesystem",
+    "min": 0,
+    "max": 60,
+    "dialText": "",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [],
+    "dialLabel": "Minutes"
+  },
+  {
+    "dialType": "pressureCMH2OHigh",
+    "min": 15,
+    "max": 70,
+    "dialText": "Pressure cmH2O",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [],
+    "dialLabel": ""
+  },
+  {
+    "dialType": "pressureCMH2OLow",
+    "min": 4,
+    "max": 39,
+    "dialText": "",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [],
+    "dialLabel": ""
+  },
+  {
+    "dialType": "ie",
+    "min": 0,
+    "max": 59,
+    "dialText": "",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [],
+    "dialLabel": "I:E"
+  },
+  {
+    "dialType": "ets",
+    "min": 5,
+    "max": 80,
+    "dialText": "%",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [],
+    "dialLabel": "ETS"
+  },
+  {
+    "dialType": "pinsp",
+    "min": 3,
+    "max": 60,
+    "dialText": "cmH2O",
+    "intDec": "int",
+    "range_and_increments": null,
+    "modesAndRanges": [],
+    "dialLabel": "△Pinsp"
+  },
+  {
+    "dialType": "minvol",
+    "min": 25,
+    "max": 350,
+    "dialText": "%",
+    "intDec": "int",
+    "range_and_increments": [{ "start": 25, "end": 350, "increment": 5 }],
+    "modesAndRanges": [],
+    "dialLabel": "%MinVol"
+  },
+  {
+    "dialType": "timax",
+    "min": 0.5,
+    "max": 3.0,
+    "dialText": "s",
+    "intDec": "dec",
+    "range_and_increments": [
+      { "start": 0.5, "end": 1.0, "increment": 0.01 },
+      { "start": 1.01, "end": 3.0, "increment": 0.05 }
+    ],
+    "modesAndRanges": [],
+    "dialLabel": "TI max"
+  }
+]
