@@ -1,0 +1,65 @@
+.topModeGenderAndMode {
+  margin-right: 3px;
+  flex: 0 0 auto;
+  color: white;
+  font-size: x-large;
+  background-color: #232522;
+  display: flex;
+  align-items: center;
+}
+
+.topModeGenderImg {
+  height: 28px;
+  width: 15px;
+}
+
+.topModeGenderImgNeonatal {
+  height: 30px;
+  width: 30px;
+}
+
+.topModeModeText {
+  width: 148px;
+  float: left;
+  font-size: 26px;
+}
+
+.topModeImgDiv {
+  width: auto;
+  height: 38px;
+  float: left;
+  padding-left: 8px;
+  padding-top: 5px;
+}
+
+.topModeInfo {
+  margin-right: 3px;
+  flex: 1 1 auto;
+  background-color: #232522;
+  justify-content: flex-end;
+}
+
+.topModeInfoPadding {
+  background-color: #e10d15;
+  width: 25px;
+}
+
+.topModeInfoImg {
+  height: auto;
+  width: 35%;
+}
+
+.topModeDateTime {
+  font-size: small;
+  color: white;
+  text-align: right;
+  font-family: arial; /* mostly fixed width to avoid shifting numbers on update */
+  margin-right: 7px;
+}
+
+.modeSideButtonFirst {
+  flex: 0 0 auto;
+  color: #fff;
+  font-size: 19.2px;
+  background-color: #232522;
+}

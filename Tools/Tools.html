@@ -1,0 +1,16 @@
+<div class="toolContainer">
+  <div class="toolSubContainer leftColumnWidth bottomRowHeightAndMargin" @click="close">Tools</div>
+  <div class="toolMain windowBottomOffset windowRightOffset bottomWindowSize">
+    <div class="toolTabFirstDiv">
+      <div class="toolCloseButtonDiv" @click="close">X</div>
+      <div class="leftColumnWidthAsMargin">
+        <div class="toolsTabs">
+          <a @click="changeTab(1)" :class="[ activetab === 1 ? 'active' : '' ]"> Utilities </a>
+          <a @click="changeTab(2)" :class="[ activetab === 2 ? 'active' : '' ]"> Configuration </a>
+        </div>
+      </div>
+      <Utilities v-if="activetab === 1" />
+      <Config v-if="activetab === 2" />
+    </div>
+  </div>
+</div>

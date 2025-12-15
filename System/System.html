@@ -1,0 +1,189 @@
+<div :class="[ !startVentEnabled ? 'systemTopWithWidthDiv' : 'systemTopNoWidthDiv' ]">
+  <div class="centralContainDiv">
+    <div :class="[ !startVentEnabled ? 'systemTabContainerBeforeVent' : 'systemTabContainerAfterVent' ]">
+      <div class="systemContainer">
+        <div class="systemTabFirstDiv">
+          <div class="systemTabSecDiv">
+            <div class="systemTabs">
+              <a @click="activetab=1" :class="[ activetab === 1 ? 'active' : '' ]">
+                Info
+              </a>
+              <a @click="activetab=2" :class="[ activetab === 2 ? 'active' : '' ]">
+                Tests & calib
+              </a>
+              <a @click="activetab=3" :class="[ activetab === 3 ? 'active' : '' ]">
+                Sensors
+              </a>
+              <a @click="activetab=4" :class="[ activetab === 4 ? 'active' : '' ]">
+                Settings
+              </a>
+            </div>
+            <div class="systemPadTabs">
+              <div v-if="activetab === 1" class="systemTabContent">
+                <div>
+                  <table id="systemTable">
+                    <tr>
+                      <td class="systemTdTable">
+                        <div class="systemFirstDivTableTd">
+                          Serial Number 4711<br />
+                          Model Hamilton-T1<br />
+                          Operating hours 1 hour<br />
+                          Hours since start up 1 hour<br />
+                          Time to service 5000 hours<br />
+                          Battery 1 98%<br />
+                          Battery 2 100%<br />
+                        </div>
+                      </td>
+                      <td class="systemTdTable systmBlockTdTable">
+                        <div class="systemSecondDivTableTd">
+                          Version Simulation V1.0<br />
+                          Options
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div v-if="activetab === 2" class="systemTabContent">
+                <div>
+                  <table id="systemTable">
+                    <tr>
+                      <td>
+                        <div class="systemTestsAndCalibButtonsDiv">
+                          <div class="systemTestsAndCalibButtonsPaddingDiv">
+                            <button class="systemTestsAndCalibButtons">
+                              Tightness
+                            </button>
+                          </div>
+                          <div class="systemTestsAndCalibButtonsPaddingDiv">
+                            <button class="systemTestsAndCalibButtons">
+                              Flow sensor
+                            </button>
+                          </div>
+                          <div class="systemTestsAndCalibButtonsPaddingDiv">
+                            <button class="systemTestsAndCalibButtons">
+                              O2 cell
+                            </button>
+                          </div>
+                          <div class="systemTestsAndCalibButtonsPaddingDiv">
+                            <button class="systemTestsAndCalibButtons">
+                              C02 censor
+                            </button>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="systemTickMainButtonsDiv">
+                          <div class="systemTickButtonsDiv"><button class="systemTickButton"></button>&nbsp;&nbsp;&nbsp;2020-08-01 14:58</div>
+                          <div class="systemTickButtonsDiv"><button class="systemTickButton"></button>&nbsp;&nbsp;&nbsp;2020-08-01 14:58</div>
+                          <div class="systemTickButtonsDiv"><button class="systemTickButton"></button>&nbsp;&nbsp;&nbsp;2020-08-01 14:58</div>
+                          <div class="systemTickButtonsDiv"><button class="systemTickButton"></button>&nbsp;&nbsp;&nbsp;2020-08-01 14:58</div>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div v-if="activetab === 3" class="systemTabContent">
+                <div>
+                  <table>
+                    <tr>
+                      <td class="systemSensorTd">
+                        <div class="systemSensorDiv">
+                          <div class="systemTickButtonsDiv"><button class="systemTickButton"></button>&nbsp;&nbsp;&nbsp;O2 cell</div>
+                          <div class="systemTickButtonsDiv"><button class="systemTickButton"></button>&nbsp;&nbsp;&nbsp;CO2 Censor</div>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+              <div v-if="activetab === 4" class="systemTabContent">
+                <div>
+                  <table class="systemDateTimeTable">
+                    <tr>
+                      <td>
+                        <div class="systemDateTimeMainButtonsDiv">
+                          <div class="systemDayAndNightButtonsPaddingRight systemDayAndNightPaddingButtons">
+                            <button id="systemDayAndNightButton" @click="showDateAndNightOrDateAndTime()" :class="[ activetabDateAndTime === 1 ? 'active' : '' ]">
+                              Day & Night
+                            </button>
+                          </div>
+                          <div class="systemDayAndNightButtonsPaddingRight systemDayAndNightPaddingButtons">
+                            <button id="systemDayAndNightButton" @click="showDateAndNightOrDateAndTime()" :class="[ activetabDateAndTime === 2 ? 'active' : '' ]">
+                              Day & Time
+                            </button>
+                          </div>
+                        </div>
+                      </td>
+                      <td v-if="whichInnerMenu === 1">
+                        <div class="systemDayAndNightButtonDiv">
+                          <div class="systemDayAndNightPaddingButtons">
+                            <button id="systemDayAndNightButton" @click="changeNightOrDay('day')" :class="[ activeButtonDayOrNight === 1 ? 'active' : '' ]">
+                              Day
+                            </button>
+                          </div>
+                          <div class="systemDayAndNightPaddingButtons">
+                            <button id="systemDayAndNightButton" @click="changeNightOrDay('night')" :class="[ activeButtonDayOrNight === 2 ? 'active' : '' ]">
+                              Night
+                            </button>
+                          </div>
+                        </div>
+                      </td>
+                      <td v-if="whichInnerMenu === 1">
+                        <div class="systemDayAndNightBrightnessDialDiv">
+                          <Dial v-if="whichDayOrNightActive === 1" :dialType="dialTypeDayBright" :screenType="screenTypeSystem" :currentMode="''"></Dial>
+                          <Dial v-if="whichDayOrNightActive === 2" :dialType="dialTypeNightBright" :screenType="screenTypeSystem" :currentMode="''"></Dial>
+                          <span class="systemTimeTextColor">Brightness</span>
+                        </div>
+                      </td>
+                      <td v-if="whichInnerMenu === 2" class="systemTimeSpanTd">
+                        <table class="systemTimeSpanDialTable">
+                          <tr>
+                            <td class="systemYearAndHoursTd">
+                              <div>
+                                <Dial :dialType="dialTypeYearSystem" :screenType="screenTypeSystem" :currentMode="''"></Dial>
+                                <div class="systemTimeTextColor">Year</div>
+                                <Dial :dialType="dialTypeHourSystem" :screenType="screenTypeSystem" :currentMode="''"></Dial>
+                                <div class="systemTimeTextColor">Hours</div>
+                              </div>
+                            </td>
+                            <td class="systemMonthMinWidth">
+                              <div>
+                                <Dial :dialType="dialTypeMonthSystem" :screenType="screenTypeSystem" :currentMode="''"></Dial>
+                                <div class="systemTimeTextColor">Month</div>
+                                <Dial :dialType="dialTypeMinuteSystem" :screenType="screenTypeSystem" :currentMode="''"></Dial>
+                                <div class="systemTimeTextColor">Minutes</div>
+                              </div>
+                            </td>
+                            <td>
+                              <div>
+                                <div>
+                                  <Dial :dialType="dialTypeDaySystem" :screenType="screenTypeSystem" :currentMode="''"></Dial>
+                                </div>
+                                <div class="systemPaddingDayCount systemTimeTextColor">Day</div>
+                                <div class="systemTimeAndDateDiv systemTimeTextColor">
+                                  Time {{currentTime}}<br />
+                                  Date {{currentDate}} <br /><br />
+                                </div>
+                                <div class="systemApplyBtnPad">
+                                  <button id="systemDayAndNightButton" @click="updateOveralDateAndTime()">
+                                    Apply
+                                  </button>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

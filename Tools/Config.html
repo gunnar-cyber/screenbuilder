@@ -1,0 +1,62 @@
+<div class="utilConfigMainContainer">
+  <div class="utilConfigSubContainer">
+    <div class="utilConfigControlsContainer utilConfigFontSize">
+      <div style="display: flex">
+        <div style="border: 2px solid #d2d2d2; width: 152px; height: 30px">{{configNumberValue}}</div>
+        <span style="width: 10px"></span>
+        <img src="../../img/Graphics/forward.png" class="" style="width: 30px; height: 30px" />
+      </div>
+      <div style="padding-top: 10px"></div>
+      <div style="display: flex; flex-direction: row">
+        <div v-for="(x, index) in activeEvents">
+          <div v-if="x == 1 || x == 2 || x == 3" style="display: flex">
+            <div class="configCalac" @click="configNumber(x)">{{x}}</div>
+            <div style="width: 5px"></div>
+          </div>
+        </div>
+      </div>
+      <div style="padding-top: 8px"></div>
+      <div style="display: flex; flex-direction: row">
+        <div v-for="(x, index) in activeEvents">
+          <div v-if="x == 4 || x == 5 || x == 6" style="display: flex">
+            <div class="configCalac" @click="configNumber(x)">{{x}}</div>
+            <div style="width: 5px"></div>
+          </div>
+        </div>
+      </div>
+      <div style="padding-top: 8px"></div>
+      <div style="display: flex; flex-direction: row">
+        <div v-for="(x, index) in activeEvents">
+          <div v-if="x == 7 || x == 8 || x == 9" style="display: flex">
+            <div class="configCalac" @click="configNumber(x)">{{x}}</div>
+            <div style="width: 5px"></div>
+          </div>
+        </div>
+      </div>
+      <div style="padding-top: 8px"></div>
+      <div style="display: flex; flex-direction: row">
+        <div v-for="(x, index) in activeEvents">
+          <div v-if="x == 0 " style="display: flex">
+            <div class="configCalac" @click="configNumber(x)">{{x}}</div>
+            <div style="width: 5px"></div>
+            <button
+              :class="[ activePOModeBtn === 2 ? 'active' : '' ]"
+              class="configCalac configEnter"
+              @click="enterConfigNumber()"
+            >
+              Enter
+            </button>
+            <div style="width: 5px"></div>
+            <button
+              :disabled="setConfigBtnDisable"
+              :class="[setConfigBtnDisable ? 'configCalac configEnter configBtnDisabled' : 'configCalac configEnter']"
+              @click="configProcess()"
+            >
+              Configuration
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

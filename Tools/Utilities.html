@@ -1,0 +1,23 @@
+<div class="utilConfigMainContainer">
+  <div class="utilConfigSubContainer">
+    <div class="utilConfigControlsContainer utilConfigFontSize">
+      <div class="utilGasTxt">Gas Source</div>
+      <div class="utilBtnContainer">
+        <button :class="[ activePOModeBtn === 1 ? 'active' : '' ]" class="utilBtn" @click="setPOMode(1)">
+          HPO mode
+        </button>
+        <span class="utilBtnPad"></span>
+        <button :class="[ activePOModeBtn === 2 ? 'active' : '' ]" class="utilBtn" @click="setPOMode(2)">
+          LPO mode
+        </button>
+      </div>
+      <div class="utilHRLine">
+        <hr />
+      </div>
+      <div class="utilExportContainer">
+        <button class="utilExportBtn" @click="setPOMode(1)">Export Logs</button>
+        <div class="utilExportTxt">To transfer data, insert USB memory stick</div>
+      </div>
+    </div>
+  </div>
+</div>

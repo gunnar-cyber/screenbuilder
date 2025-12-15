@@ -1,0 +1,17 @@
+.configCalac {
+  background-color: #afb4b0;
+  color: black;
+  width: 61px;
+  height: 30px;
+  font-size: medium;
+  text-align: center;
+  &.configEnter {
+    width: 126px;
+    height: 30px;
+  }
+  &.configBtnDisabled {
+    color: #dfdfdf;
+    background-color: white;
+    border: thin solid rgba(0, 0, 0, 0.2);
+  }
+}

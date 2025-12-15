@@ -1,0 +1,63 @@
+.toolMain {
+  position: absolute;
+  background-color: #dfdfdf;
+  top: 180px;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+}
+
+.toolTabFirstDiv {
+  background-color: #8c979a;
+}
+
+.toolCloseButtonDiv {
+  width: 30px;
+  height: 30px;
+  background-color: #c1c7c9;
+  color: #fff;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.toolSubContainer {
+  background-color: #dfdfdf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+  width: 120px;
+  bottom: 0px;
+  position: absolute;
+}
+
+.toolContainer {
+  padding-left: 178px;
+}
+
+.toolsTabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 45px;
+  padding-left: 150px;
+}
+
+.toolsTabs a {
+  width: 130px;
+  color: #000;
+  border-left: 2px solid;
+  border-color: rgba(156, 163, 175, var(--tw-border-opacity));
+  cursor: pointer;
+  padding-top: 10px;
+  background-color: #c1c7c9;
+}
+
+.toolsTabs a.active {
+  background-color: #dfdfdf;
+  color: #000;
+}

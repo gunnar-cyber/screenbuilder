@@ -1,0 +1,232 @@
+.systemTopWithWidthDiv {
+  width: 576px;
+  height: 448px;
+  background-color: #1f5192;
+  padding-top: 5px;
+}
+
+.systemTopNoWidthDiv {
+  height: 410px;
+  background-color: #232522;
+  padding-top: 230px;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+}
+
+.systemTabFirstDiv {
+  background-color: #dfdfdf;
+  padding-top: 5px;
+  width: 485px;
+  padding-right: 10px;
+  height: 328px;
+  padding-left: 5px;
+}
+
+.systemTabSecDiv {
+  background-color: white;
+  padding-top: 7px;
+  width: 478px;
+  height: 314px;
+  border: solid;
+  border-color: #d2d2d2;
+}
+
+.systemTabContainerBeforeVent {
+  position: absolute;
+  top: 0;
+  width: 675px;
+  padding-left: 93px;
+}
+
+.systemTabContainerAfterVent {
+  position: absolute;
+  top: 0;
+  width: 440px;
+}
+
+.systemTickButton {
+  background: url("../../img/System/infoTicked.png") no-repeat;
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+}
+
+.systemContainer {
+  margin: 10px auto;
+  color: white;
+  padding-top: 110px;
+}
+
+.systemTabs {
+  overflow: hidden;
+  width: 313px;
+  margin-left: 155px;
+  margin-bottom: 3px;
+  background-color: #aaafab;
+}
+
+.systemTabs a {
+  height: 50px;
+  float: left;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-right: none;
+  color: black;
+}
+
+.systemTabs a:last-child {
+  border-right: 1px solid #ccc;
+}
+
+.systemTabs a.active {
+  background-color: green;
+  color: white;
+}
+
+.systemTabContent {
+  height: 245px;
+  width: 460px;
+  background-color: #aaafab;
+  border: medium solid rgb(210, 210, 210);
+}
+
+.systemPadTabs {
+  padding-left: 8px;
+}
+
+#systemTable {
+  width: 480px;
+  color: black;
+}
+
+.systemTdTable {
+  width: 240px;
+  padding-left: 20px;
+}
+
+.systmBlockTdTable {
+  display: block;
+}
+
+.systemFirstDivTableTd {
+  padding-top: 20px;
+  text-align: left;
+}
+
+.systemSecondDivTableTd {
+  padding-top: 20px;
+  text-align: left;
+}
+
+.systemDateTimeTable {
+  width: 500px;
+  height: 210px;
+}
+
+.systemTestsAndCalibButtonsDiv {
+  padding-top: 5px;
+}
+
+.systemTestsAndCalibButtonsPaddingDiv {
+  padding-bottom: 7px;
+}
+
+.systemTestsAndCalibButtons {
+  background-color: #767776;
+  font-size: medium;
+  width: 120px;
+  height: 45px;
+}
+
+.systemTickMainButtonsDiv {
+  padding-right: 100px;
+  padding-top: 20px;
+}
+
+.systemTickButtonsDiv {
+  padding-bottom: 11px;
+}
+
+#systemDayAndNightButton {
+  background-color: #767776;
+  font-size: small;
+  width: 100px;
+  height: 45px;
+  color: black;
+}
+
+#systemDayAndNightButton.active {
+  background-color: green;
+  color: white;
+}
+
+.systemSensorTd {
+  text-align: left;
+  display: block;
+}
+
+.systemSensorDiv {
+  width: 180px;
+  padding-left: 15px;
+  height: 210px;
+  padding-top: 20px;
+}
+
+.systemDateTimeMainButtonsDiv {
+  padding-left: 5px;
+  height: 210px;
+  padding-top: 20px;
+}
+
+.systemDayAndNightPaddingButtons {
+  padding-bottom: 7px;
+}
+
+.systemDayAndNightButtonsPaddingRight {
+  padding-right: 5px;
+}
+
+.systemDayAndNightButtonDiv {
+  height: 210px;
+  padding-top: 20px;
+}
+
+.systemDayAndNightBrightnessDialDiv {
+  height: 210px;
+  width: 150px;
+  padding-top: 20px;
+}
+
+.systemTimeSpanDialTable {
+  width: 350px;
+}
+
+.systemYearAndHoursTd {
+  width: 110px;
+}
+
+.systemTimeAndDateDiv {
+  text-align: left;
+  font-size: small;
+}
+
+.systemPaddingDayCount {
+  padding-right: 15px;
+}
+
+.systemTimeTextColor {
+  color: black;
+}
+
+.systemTimeSpanTd {
+  padding-top: 10px;
+}
+
+.systemMonthMinWidth {
+  width: 110px;
+}
+
+.systemApplyBtnPad {
+  padding-right: 20px;
+}

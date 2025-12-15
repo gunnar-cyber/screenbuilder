@@ -1,0 +1,38 @@
+<div class="flex flex-row">
+  <div class="topModeGenderAndMode leftColumnWidth">
+    <div class="topModeImgDiv">
+      <img v-if="getGender === 0" :src="male" class="topModeGenderImg" />
+      <img v-if="getGender === 1" :src="female" class="topModeGenderImg" />
+      <img v-if="getGender === 2" :src="neonatal" class="topModeGenderImgNeonatal" />
+    </div>
+    <div class="topModeModeText" @click="isAnyDialOn ? () => {} : showNavigation(mode, isModeBtnPressed)">
+      {{getMode}}
+    </div>
+  </div>
+  <div class="flex flex-row topModeInfo relative">
+    <div class="topModeDateTime self-center">{{getCurrentDate.currentDate}}<br />{{getCurrentDate.currentTime}}</div>
+    <div
+      class="topModeInfoPadding flex justify-center items-center"
+      v-if="bufferedAlarms"
+      @click="isAnyDialOn ? () => {} : showNavigation(alarm, isAlarmBtnPressed)"
+    >
+      <img :src="info" class="topModeInfoImg" />
+    </div>
+    <div
+      class="flex justify-center items-center absolute inset-0 text-black"
+      :style="{ 'background-color': alarmBackgroundColor, 'color': alarmTextColour }"
+      v-if="activeAlarms"
+      @click="isAnyDialOn ? () => {} : showNavigation(alarm, isAlarmBtnPressed)"
+    >
+      {{alarmMessageText}}
+    </div>
+  </div>
+  <button
+    class="modeSideButtonFirst rightColumnWidth"
+    :class="{ 'active': isModeBtnPressed }"
+    @click="showNavigation(mode, isModeBtnPressed)"
+    :disabled="isAnyDialOn"
+  >
+    Modes
+  </button>
+</div>
