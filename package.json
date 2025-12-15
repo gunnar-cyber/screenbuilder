@@ -1,60 +1,60 @@
 {
-  "name": "root",
-  "version": "0.0.1",
-  "description": "This package sets up the shared libraries and builds all the devices for production",
+  "name": "hamilton-t1",
+  "version": "0.1.0",
   "private": true,
-  "author": "iSimulate UnionLane",
-  "license": "commercial",
-  "workspaces": {
-    "packages": [
-      "build-scripts",
-      "lib",
-      "screenbuilder-components",
-      "settings-app",
-      "device/*"
-    ]
+  "engines": {
+    "npm": "please-use-yarn-workspace",
+    "yarn": ">= 1.22.17"
   },
+  "type": "module",
   "scripts": {
-    "build": "yarn workspaces run build",
-    "build:all": "cd build-scripts && yarn build:all && cd .. && yarn workspaces run build",
-    "libs": "yarn workspace \"isimulate-screen-builder\" build && yarn workspace \"@screenbuilder/components\" build",
-    "test": "vitest --run"
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "serve-prod": "vite preview",
+    "lint": "vue-cli-service lint",
+    "test": "vitest"
   },
   "dependencies": {
-    "howler": "^2.2.3",
-    "lodash": "^4.17.21",
-    "pinia": "^2.0.0",
-    "pixi.js": "^7.4.2",
-    "vue": "^3.4.23",
-    "vue-i18n": "^9.1.7"
+    "@screenbuilder/components": "0.0.1",
+    "eslint-plugin-tsdoc": "^0.2.14",
+    "isimulate-screen-builder": "0.0.1",
+    "vue-i18n": "^9.13.0"
   },
   "devDependencies": {
-    "@crowdin/crowdin-api-client": "^1.40.0",
-    "@types/howler": "^2.2.4",
-    "@types/jest": "^24.0.19",
-    "@types/lodash": "4.14.170",
-    "@typescript-eslint/eslint-plugin": "^6.1.0",
-    "@typescript-eslint/parser": "^6.1.0",
-    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vitejs/plugin-vue": "^5.0.4",
     "@vue/eslint-config-typescript": "^7.0.0",
     "@vue/test-utils": "^2.0.0-0",
     "autoprefixer": "^9.8.6",
-    "dotenv": "^16.4.7",
-    "eslint": "^7.1.0",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-vue": "^7.0.0",
-    "extract-zip": "^2.0.1",
-    "jest": "^24.9.0",
-    "jest-canvas-mock": "^2.3.1",
-    "jszip": "^3.10.1",
-    "luxon": "^2.1.1",
-    "cross-fetch": "^4.0.0",
-    "prettier": "^2.2.1",
-    "sass": "^1.49.9",
-    "sass-loader": "^10.0.5",
-    "tslib": "^2.3.1",
-    "tsx": "^4.19.2",
-    "typescript": "~5.4.5",
-    "vue-jest": "^5.0.0-0"
-  }
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.25.0",
+    "postcss": "^7.0.35",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.4",
+    "vite": "^5.2.9",
+    "vitest": "^1.5.3",
+    "vue-tsc": "^2.0.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "browser": true,
+      "es2022": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended",
+      "@vue/typescript"
+    ],
+    "parserOptions": {
+      "parser": "@typescript-eslint/parser"
+    },
+    "rules": {
+      "no-unused-vars": 0,
+      "vue/multi-word-component-names": 0
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }
